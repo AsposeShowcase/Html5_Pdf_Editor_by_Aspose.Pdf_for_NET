@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  CodeBehind="AsposePdfEditor.master.cs" Inherits="AsposePdfEditor.AsposePdfEditor" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Pdf Editor - Aspose</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    <style type="text/css">
+        
+      #container { position: relative; }
+      #imageView { border: 1px solid #000; }
+      #imageTemp { position: absolute; top: 1px; left: 1px; }
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="container">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    
+    
+</body>
+</html>

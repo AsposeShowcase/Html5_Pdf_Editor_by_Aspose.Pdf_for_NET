@@ -1,0 +1,6 @@
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\bin\ResumeParser.dll
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\bin\ResumeParser.pdb
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\obj\Debug\ResumeParser.dll
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\obj\Debug\ResumeParser.pdb
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\bin\AjaxMin.dll
+D:\Nausherwan Aslam\Samples\ASP.NET-Bootstrap3.0.0-Sample-master\ASP.NET-Bootstrap3.0.0-Sample-master\ResumeParser\obj\Debug\ResumeParser.csprojResolveAssemblyReference.cache
