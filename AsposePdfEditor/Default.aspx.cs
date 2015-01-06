@@ -20,6 +20,7 @@ using System.Web.Script.Serialization;
 using System.Web.Services;
 using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using System.Net;
 
 namespace AsposePdfEditor
 {
@@ -29,8 +30,8 @@ namespace AsposePdfEditor
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            Aspose.Pdf.License lic = new Aspose.Pdf.License();
-            lic.SetLicense("D:\\Aspose.Total.lic");
+          
+            
         }
 
       

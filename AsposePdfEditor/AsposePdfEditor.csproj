@@ -39,8 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Pdf">
-      <HintPath>..\..\..\..\Data\Aspose.Pdf_9.2.1\Bin\net3.5\Aspose.Pdf.dll</HintPath>
+    <Reference Include="Aspose.Pdf, Version=9.8.0.0, Culture=neutral, PublicKeyToken=6947866647e416ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
@@ -61,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AsposePdfEditor.Master" />
+    <Content Include="bin\Aspose.Pdf.dll" />
     <Content Include="bootstrap\css\bootstrap-theme.css" />
     <Content Include="bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -69,11 +71,10 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="CanvasSave.aspx" />
     <Content Include="example-5.js" />
-    <Content Include="fillrule-evenodd.svg" />
-    <Content Include="loader.gif" />
+    <Content Include="framely.gif" />
     <Content Include="Default.aspx" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
-    <Content Include="Convert\TestReport.svg" />
+    <Content Include="temporary_manifest_hack.html" />
     <Content Include="Test.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -117,9 +118,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
+    <Folder Include="Attachments\" />
+    <Folder Include="Convert\" />
+    <Folder Include="Images\" />
     <Folder Include="Input\" />
+    <Folder Include="License\" />
     <Folder Include="obj\" />
+    <Folder Include="search\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -135,11 +140,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>49168</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/PdfEditor</IISUrl>
+          <IISUrl>http://localhost:59065/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

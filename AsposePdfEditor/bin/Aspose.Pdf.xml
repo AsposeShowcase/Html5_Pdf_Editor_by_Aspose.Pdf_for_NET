@@ -110,6 +110,527 @@
             Undefined color type value.
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.ComHelper">
+      <summary>
+            Provides methods for COM clients to load a document into Aspose.Pdf.
+            </summary>
+      <remarks>
+            Use the ComHelper class to load a document from a file or stream into a Document object in a COM application.
+            The Document class provides a default constructor to create a new document
+            and also provides overloaded constructors to load a document from a file or stream.
+            If you are using Aspose.Words from a .NET application, you can use all of the Document constructors directly, but if you are using Aspose.Pdf from a COM application,
+            only the default Document constructor is available.
+            </remarks>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenStream(System.IO.Stream)">
+      <summary>
+            Initialize and return new Document instance from the <paramref name="input" /> stream.
+            </summary>
+      <param name="input">Stream with pdf document. </param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenStream(System.IO.Stream,System.String)">
+      <summary>
+            Initialize and return new Document instance from the <paramref name="input" /> stream.
+            </summary>
+      <param name="input">Input stream object, corresponding pdf is password protected.</param>
+      <param name="password">User or owner password.</param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenStream(System.IO.Stream,System.Boolean)">
+      <summary>
+            Initialize and return new Document instance from the <paramref name="input" /> stream.
+            </summary>
+      <param name="input">Stream with pdf document. </param>
+      <param name="isManagedStream">if set to <c>true</c> inner stream is closed before exit; otherwise, is not.</param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenStream(System.IO.Stream,System.String,System.Boolean)">
+      <summary>
+            Initialize and return new Document instance from the <paramref name="input" /> stream.
+            </summary>
+      <param name="input">Stream with pdf document. </param>
+      <param name="password">User or owner password.</param>
+      <param name="isManagedStream">if set to <c>true</c> inner stream is closed before exit; otherwise, is not.</param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenStream(System.IO.Stream,Aspose.Pdf.LoadOptions)">
+      <summary>
+            Open and return an existing document from a stream providing necessary converting to get pdf document.
+            </summary>
+      <param name="input">
+            Input stream to convert into pdf document.
+            </param>
+      <param name="options">
+            Represents properties for converting <paramref name="input" /> into pdf document.
+            </param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenFile(System.String)">
+      <summary>
+            Just create and return Document using <paramref name="filename" />. The same as <see cref="M:Aspose.Pdf.Document.#ctor(System.IO.Stream)" />.
+            </summary>
+      <param name="filename">The name of the pdf document file. </param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenFile(System.String,System.String)">
+      <summary>
+            Initialize and return new instance of the <see cref="T:Aspose.Pdf.Document" /> class for working with encrypted document. 
+            </summary>
+      <param name="filename">Document file name.</param>
+      <param name="password">User or owner password.</param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenFile(System.String,System.String,System.Boolean)">
+      <summary>
+            Initialize new instance of the <see cref="T:Aspose.Pdf.Document" /> class for working with encrypted document. 
+            </summary>
+      <param name="filename">Document file name.</param>
+      <param name="password">User or owner password.</param>
+      <param name="isManagedStream">if set to <c>true</c> inner stream is closed before exit; otherwise, is not.</param>
+      <returns>Document object</returns>
+    </member>
+    <member name="M:Aspose.Pdf.ComHelper.OpenFile(System.String,Aspose.Pdf.LoadOptions)">
+      <summary>
+            Open an existing document from a file providing necessary converting oprions to get pdf document.
+            </summary>
+      <param name="filename">
+            Input file to convert into pdf document.
+            </param>
+      <param name="options">
+            Represents properties for converting <paramref name="filename" /> into pdf document.
+            </param>
+      <returns>Document object</returns>
+    </member>
+    <member name="T:Aspose.Pdf.Text.MemoryFontSource">
+      <summary>
+             Represents single font file source.
+             </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Text.FontSource">
+      <summary>
+             Represents a base class fot font source.
+             </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Text.MemoryFontSource.#ctor(System.Byte[])">
+      <summary> 
+            Initializes a new instance of <see cref="T:Aspose.Pdf.Text.MemoryFontSource" /> class.
+            </summary>
+      <param name="fontBytes">Font file byte array.</param>
+    </member>
+    <member name="M:Aspose.Pdf.Text.MemoryFontSource.Equals(System.Object)">
+      <summary>
+            Check if font file source objects are equal.
+            </summary>
+      <param name="obj">Font file source object which will be compared.</param>
+      <returns>True if both objects are font file sources targeted to the same file.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.Text.MemoryFontSource.Dispose">
+      <summary>
+            Releases internal resources.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Text.MemoryFontSource.FontBytes">
+      <summary>
+            Font file byte array. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Text.FileFontSource">
+      <summary>
+             Represents single font file source.
+             </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Text.FileFontSource.#ctor(System.String)">
+      <summary> 
+            Initializes a new instance of <see cref="T:Aspose.Pdf.Text.FileFontSource" /> class.
+            </summary>
+      <param name="filePath">Path to the font file.</param>
+    </member>
+    <member name="M:Aspose.Pdf.Text.FileFontSource.Equals(System.Object)">
+      <summary>
+            Check if font file source objects are equal.
+            </summary>
+      <param name="obj">Font file source object which will be compared.</param>
+      <returns>True if both objects are font file sources targeted to the same file.</returns>
+    </member>
+    <member name="P:Aspose.Pdf.Text.FileFontSource.FilePath">
+      <summary>
+            Path to the font file. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Exceptions.PdfException">
+      <summary>
+            Represents errors that occur during PDF application execution.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException" /> class.
+            </summary>
+      <param name="message">The message.</param>
+    </member>
+    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException"></see> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+      <param name="message">The error message that explains the reason for the exception. </param>
+      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
+    </member>
+    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException"></see> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
+    </member>
+    <member name="T:Aspose.Pdf.Facades.PdfPrintPageInfo">
+      <summary>
+            Represents an object that contains current printing page info.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Facades.PdfPrintPageInfo.PageNumber">
+      <summary>
+            Gets currently printed page number;
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Facades.PdfQueryPageSettingsEventHandler">
+      <summary>
+            Represents the method that handles the QueryPageSettings event of a PrintDocument.
+            </summary>
+      <param name="sender">The source of the event. </param>
+      <param name="queryPageSettingsEventArgs">A QueryPageSettingsEventArgs that contains the event data.</param>
+      <param name="currentPageInfo">Currently printed page info.</param>
+    </member>
+    <member name="T:Aspose.Pdf.FileEncoding">
+      <summary>
+            Encoding of the attached file. Possible values: Zip - file is compressed with ZIP, None - file is non compressed.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.FileEncoding.None">
+      <summary>
+             File is not compressed.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.FileEncoding.Zip">
+      <summary>
+            File is compressed with ZIP algorithhm. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Note">
+      <summary>
+            This class represents generator paragraph note.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Note.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Note" /> class.
+            </summary>
+      <param name="content">The note content.</param>
+    </member>
+    <member name="P:Aspose.Pdf.Note.Fragment">
+      <summary>
+            Gets or sets a note fragment.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Note.Text">
+      <summary>
+            Gets or sets a note text.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.ImageFileType">
+      <summary>
+            Enumerates the image file types.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.ImageFileType.Unknown">
+      <summary>
+            Unknown type.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.ImageFileType.Svg">
+      <summary>
+            svg image file type.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.ColumnAdjustment">
+      <summary>
+            Enumerates column adjustment types.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.ColumnAdjustment.Customized">
+      <summary>
+            Customized.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.ColumnAdjustment.AutoFitToContent">
+      <summary>
+            Auto fit to content.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Drawing.Ellipse">
+      <summary>
+            Represents ellipse.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Drawing.Shape">
+      <summary>
+            Represents shape - the base graphics object.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Shape.GraphInfo">
+      <summary>
+            Gets or sets a <see cref="P:Aspose.Pdf.Drawing.Shape.GraphInfo" /> object that indicates the graph info,such as color,
+            line width,etc.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Drawing.Ellipse.#ctor(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Drawing.Ellipse" /> class.
+            </summary>
+      <param name="left">The left position of the ellipse.</param>
+      <param name="bottom">The bottom position of the ellipse.</param>
+      <param name="width">The width of the ellipse.</param>
+      <param name="height">The height of the ellipse.</param>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Ellipse.Left">
+      <summary>
+            Gets or sets a float value that indicates the left position of the ellipse.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Ellipse.Bottom">
+      <summary>
+            Gets or sets a float value that indicates the bottom position of the ellipse.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Ellipse.Width">
+      <summary>
+            Gets or sets a float value that indicates the width of the ellipse.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Ellipse.Height">
+      <summary>
+            Gets or sets a float value that indicates the height of the ellipse.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Drawing.Path">
+      <summary>
+            Represents arc.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Drawing.Path.#ctor(Aspose.Pdf.Drawing.Shape[])">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Drawing.Path" /> class.
+            </summary>
+      <param name="shapes">The shape array contains path segments set.</param>
+    </member>
+    <member name="M:Aspose.Pdf.Drawing.Path.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Drawing.Path" /> class.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Path.Shapes">
+      <summary>
+            Gets or sets shapes collection.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.CapStyle">
+      <summary>
+            Style of line ending of Ink annotation line. 
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.CapStyle.Rectangular">
+      <summary>
+            End is rectangular.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.CapStyle.Rounded">
+      <summary>
+            End is rounded.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.Measure">
+      <summary>
+            Class which describes Measure coordinate system. 
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.#ctor(Aspose.Pdf.InteractiveFeatures.Annotations.Annotation)">
+      <summary>
+            Creates Measure object for measure annotations. 
+            </summary>
+      <param name="annotation">Annotation for which measure will be bound.</param>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.ScaleRatio">
+      <summary>
+            A text string expressing the scale ratio of the drawing.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.XFormat">
+      <summary>
+            A number format array for measurement of change along the xaxis and, if Y is not present, along the y axis as well
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.YFormat">
+      <summary>
+            A number format array for measurement of change along the y axis.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.DistanceFormat">
+      <summary>
+            A number format array for measurement of distance in any direction.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.AreaFormat">
+      <summary>
+            A number format array for measurement of area.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.AngleFormat">
+      <summary>
+            A number format array for measurement of angles.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.SlopeFormat">
+      <summary>
+            A number format array for measurement of the slope of a line.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.Origin">
+      <summary>
+            Point that shall specify the origin of the measurement coordinate system in default user space coordinates.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.XYFactor">
+      <summary>
+            A factor that shall be used to convert the largest units along the y axis to the largest units along the x axis.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList">
+      <summary>
+            Represents list of number formats.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.#ctor(Aspose.Pdf.InteractiveFeatures.Annotations.Measure)">
+      <summary>
+            Constructor for NumberFormatList. 
+            </summary>
+      <param name="measure">Parent measure object.</param>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.Add(Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat)">
+      <summary>
+            Adds number format to list.
+            </summary>
+      <param name="value">Value to be added into list.</param>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.Insert(System.Int32,Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat)">
+      <summary>
+            Inserts number format into list.
+            </summary>
+      <param name="index">Index where new element will be added.</param>
+      <param name="value">Value to be inserted.</param>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.RemoveAt(System.Int32)">
+      <summary>
+            Removes number format from list.
+            </summary>
+      <param name="index">Index of item to be removed.</param>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.Item(System.Int32)">
+      <summary>
+            Gets or sets number format in list by its index.
+            </summary>
+      <param name="index">Index of the item to be retreived.</param>
+      <returns>Retreived measure item.</returns>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormatList.Count">
+      <summary>
+            Count if items in the list. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat">
+      <summary>
+            Number format for measure. 
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.#ctor(Aspose.Pdf.InteractiveFeatures.Annotations.Measure)">
+      <summary>
+            Constructor for NumberFormat class.
+            </summary>
+      <param name="measure">Measure object which contains this number format.</param>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.UnitLabel">
+      <summary>
+            A text string specifying a label for displaying the units.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.ConvresionFactor">
+      <summary>
+            The conversion factor used to multiply a value in partial units of the previous number format array element to obtain a value in the units of this number format.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionDisplayment">
+      <summary>
+            In what manner fractional values are displayed.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.Precision">
+      <summary>
+            If FractionDisplayment is ShowAsDecimal, this value is precision of fractional value; It shall me multiple of 10. Default is 100.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.Denominator">
+      <summary>
+            If FractionDisplayment is ShowAsFraction, this value is denominator of the fraction. Default value is 16.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.ForceDenominator">
+      <summary>
+            If FractionDisplayment is ShowAsFraction, this value determines meay or not the fraction be reduced. If value is true fraction may not be reduced.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.ThousandsSeparator">
+      <summary>
+            Text that shall be used between orders of thousands in display of numerical values. An empty string indicates that no text shall be added. Default is comma.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionSeparator">
+      <summary>
+            Text that shall be used as the decimal position in displaying numerical values. An empty string indicates that the default shall be used. Default is period character.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.BeforeText">
+      <summary>
+            Text that shall be concatenated to the left of the label.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.AfterText">
+      <summary>
+            Text that shall be concatenated after the label
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionStyle">
+      <summary>
+            Value which indicates in which manner fraction values are displayed.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionStyle.ShowAsDecimal">
+      <summary>
+            Show fractional values as decimal fraction.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionStyle.ShowAsFraction">
+      <summary>
+            Show fractional value as fraction.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionStyle.Round">
+      <summary>
+            Round fractional values to the nearest whole integer.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.Measure.NumberFormat.FractionStyle.Truncate">
+      <summary>
+            Truncate to achieve whole units.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.TimestampSettings">
       <summary>
             Represents the ocsp settings using during signing process.
@@ -358,28 +879,41 @@
              Can be use in custom code to decide how to process or where save that file
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.ExcelSaveOptions.MinimizeTheNumberOfWorksheets">
+      <summary>
+            Set true if you need to minimize the number of worksheets in resultant workbook.
+            Default value is false; it means save of each PDF page as separated worksheet.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.ExcelSaveOptions.InsertBlankColumnAtFirst">
+      <summary>
+            Set false if you need suppress inserting of blank column as the first column of worksheet.
+            Default value is true; it means that blank column will be inserted.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.ExcelSaveOptions.UniformWorksheets">
+      <summary>
+            Set true for using uniform columns division through the document. 
+            Default value is false; it means that columns division will independent for each page.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Drawing.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Drawing</b> namespace provides classes describing graphic primitives like arc, line, circle etc. 
+            Corresponding objects can be used for creating new documents.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Drawing.Arc">
       <summary>
             Represents arc.
-            </summary>
-    </member>
-    <member name="T:Aspose.Pdf.Drawing.Shape">
-      <summary>
-            Represents shape - the base graphics object.
-            </summary>
-    </member>
-    <member name="P:Aspose.Pdf.Drawing.Shape.GraphInfo">
-      <summary>
-            Gets or sets a <see cref="P:Aspose.Pdf.Drawing.Shape.GraphInfo" /> object that indicates the graph info,such as color,
-            line width,etc.
             </summary>
     </member>
     <member name="M:Aspose.Pdf.Drawing.Arc.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)">
       <summary>
             Initializes a new instance of the <see cref="T:Aspose.Pdf.Drawing.Arc" /> class.
             </summary>
-      <param name="xPosition">The x-coordinate of the center point of the arc.</param>
-      <param name="yPosition">The y-coordinate of the center point of the arc.</param>
+      <param name="posX">The x-coordinate of the center point of the arc.</param>
+      <param name="posY">The y-coordinate of the center point of the arc.</param>
       <param name="radius">The radius value of the arc.</param>
       <param name="alpha">The beginning angle value of the arc.</param>
       <param name="beta">The end angle value of the arc.</param>
@@ -421,10 +955,6 @@
       <param name="posX">The x-coordinate of the center of the circle.</param>
       <param name="posY">The y-coordinate of the center of the circle.</param>
       <param name="radius">The radius of the circle.</param>
-      <remarks>
-            This constructor can inherit common property values from the specified 
-            <see cref="T:Aspose.Pdf.Drawing.Graph" /> object.
-            </remarks>
     </member>
     <member name="P:Aspose.Pdf.Drawing.Circle.PosX">
       <summary>
@@ -525,6 +1055,12 @@
             Default is false.(for pdf generation)
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.BaseParagraph.IsInLineParagraph">
+      <summary>
+            Gets or sets a paragraph is inline.
+            Default is false.(for pdf generation)
+            </summary>
+    </member>
     <member name="M:Aspose.Pdf.Drawing.Graph.#ctor(System.Single,System.Single)">
       <summary>
             Initializes a new instance of the <see cref="T:Aspose.Pdf.Drawing.Graph" /> class.
@@ -535,6 +1071,16 @@
     <member name="P:Aspose.Pdf.Drawing.Graph.GraphInfo">
       <summary>
             Gets or sets a <see cref="P:Aspose.Pdf.Drawing.Graph.GraphInfo" /> object that indicates the graph info.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Graph.Left">
+      <summary>
+            Gets or sets the table left coordinate.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Drawing.Graph.Top">
+      <summary>
+            Gets or sets the table top coordinate.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.Drawing.Graph.Shapes">
@@ -634,6 +1180,11 @@
       <param name="width">The width of the rectangle.</param>
       <param name="height">The height of the rectangle.</param>
     </member>
+    <member name="P:Aspose.Pdf.Drawing.Rectangle.RadiusForRoundCorner">
+      <summary>
+            Gets or sets a float value that indicates the radius of rectangle corners.
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.Drawing.Rectangle.Left">
       <summary>
             Gets or sets a float value that indicates the left position of the rectangle.
@@ -652,6 +1203,22 @@
     <member name="P:Aspose.Pdf.Drawing.Rectangle.Height">
       <summary>
             Gets or sets a float value that indicates the height of the rectangle.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.HtmlFragment">
+      <summary>
+            Represents html fragment.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.HtmlFragment.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the HtmlFragment class.
+            </summary>
+      <param name="text">The fragment text</param>
+    </member>
+    <member name="P:Aspose.Pdf.HtmlFragment.Text">
+      <summary>
+            Gets or sets a text.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.SoundSampleData">
@@ -798,14 +1365,15 @@
             True value of ExtendnedBoolean.
             </summary>
     </member>
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.Data.IPdfArray.ToArrayList" -->
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.Data.PdfArray.ToArrayList" -->
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.CommonData.PageContent.Operators.OperationContext.FinalizeUnicodeTTFFonts" -->
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.CommonData.ReferenceNodeArrayList.AddRange(System.Collections.ICollection)" -->
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.CommonData.ReferenceNodeArrayList.Add(Aspose.Pdf.Engine.Addressing.Analyze.IReferenceNode)" -->
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.CommonData.ReferenceNodeArrayList.Contains(Aspose.Pdf.Engine.Addressing.Analyze.IReferenceNode)" -->
     <member name="T:Aspose.Pdf.Text.FolderFontSource">
       <summary>
              Represents the folder that contains font files. 
-             </summary>
-    </member>
-    <member name="T:Aspose.Pdf.Text.FontSource">
-      <summary>
-             Represents a base class fot font source.
              </summary>
     </member>
     <member name="M:Aspose.Pdf.Text.FolderFontSource.#ctor(System.String)">
@@ -1061,30 +1629,6 @@
             Gets font name that should substitute the <see cref="P:Aspose.Pdf.Text.SimpleFontSubstitution.OriginalFontName" /></summary>
     </member>
     <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.Data.PdfObjectGroup.SkipBlank(Aspose.Pdf.Engine.IO.Stream.IPdfStreamReader)" -->
-    <member name="T:Aspose.Pdf.Exceptions.PdfException">
-      <summary>
-            Represents errors that occur during PDF application execution.
-            </summary>
-    </member>
-    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.String)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException" /> class.
-            </summary>
-      <param name="message">The message.</param>
-    </member>
-    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.String,System.Exception)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException"></see> class with a specified error message and a reference to the inner exception that is the cause of this exception.
-            </summary>
-      <param name="message">The error message that explains the reason for the exception. </param>
-      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
-    </member>
-    <member name="M:Aspose.Pdf.Exceptions.PdfException.#ctor(System.Exception)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Aspose.Pdf.Exceptions.PdfException"></see> class with a specified error message and a reference to the inner exception that is the cause of this exception.
-            </summary>
-      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
-    </member>
     <member name="T:Aspose.Pdf.Exceptions.IncorrectFontUsageException">
       <summary>
             The exception that is thrown when font usage is incorrect.
@@ -1181,6 +1725,11 @@
             </summary>
       <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
     </member>
+    <member name="T:Aspose.Pdf.Exceptions.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Exceptions</b> namespace provides classes for exceptions which can occur while working with a document.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.ConvertErrorAction">
       <summary>
             This class represents action for conversion errors.
@@ -1203,14 +1752,14 @@
     <member name="F:Aspose.Pdf.PdfFormat.PDF_A_1B">
             Pdf/A-1b format
         </member>
+    <member name="F:Aspose.Pdf.PdfFormat.PDF_A_2A">
+            Pdf/A-2a format
+        </member>
     <member name="F:Aspose.Pdf.PdfFormat.PDF_A_2B">
             Pdf/A-2b format
         </member>
     <member name="F:Aspose.Pdf.PdfFormat.PDF_A_3B">
             Pdf/A-3b format
-        </member>
-    <member name="F:Aspose.Pdf.PdfFormat.Tagged_PDF">
-            Tagged PDF
         </member>
     <member name="F:Aspose.Pdf.PdfFormat.v_1_3">
             Adobe version 1.3
@@ -1233,6 +1782,7 @@
     <member name="F:Aspose.Pdf.PdfFormat.PDF_X_3">
             PDF/X-3 format
         </member>
+    <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Engine.Presentation.GDIImpl.Utils.OctreeQuantizer.Octree.Palletize(System.Int32)" -->
     <member name="T:Aspose.Pdf.IIndexBitmapConverter">
       <summary>
             This interface declared for customization algorithms of quantization. 
@@ -1283,6 +1833,12 @@
     <member name="F:Aspose.Pdf.CryptoAlgorithm.AESx256">
       <summary>
             AES with key length 256.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Text.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Text</b> namespace provides classes that allow to extract text, add text, manipulate existing text of a document.  
+            It also contain classes that allow to extract, replace, substitute fonts of a document.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.Exceptions.FontNotFoundException">
@@ -1489,9 +2045,6 @@
             Initializes a new instance of the <see cref="T:Aspose.Pdf.FloatingBox" /> class.
             </summary>
     </member>
-    <member name="F:Aspose.Pdf.FloatingBox.VerticalAlignment">
-            Gets or sets a vertical alignment of paragraph 
-        </member>
     <member name="M:Aspose.Pdf.FloatingBox.Clone">
       <summary>
             Clones a new <see cref="T:Aspose.Pdf.FloatingBox" /> object. Paragraphs in the floating box are not cloned.
@@ -1532,6 +2085,11 @@
     <member name="P:Aspose.Pdf.FloatingBox.Top">
       <summary>
             Gets or sets the table top coordinate.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.FloatingBox.VerticalAlignment">
+      <summary>
+            Gets or sets a vertical alignment of text fragment. 
             </summary>
     </member>
     <member name="T:Aspose.Pdf.HeaderFooter">
@@ -1595,7 +2153,8 @@
              <see cref="T:Aspose.Pdf.Text.TextFragment" /> provides simple way to change text with it's properties: set font, set font size, set font color etc.
              Meanwhile <see cref="T:Aspose.Pdf.Text.TextSegment" /> objects are accessible and users are able to operate with <see cref="T:Aspose.Pdf.Text.TextSegment" /> objects independently.
              
-             Note that changing TextFragment properties may change inner <see cref="P:Aspose.Pdf.Text.TextFragment.Segments" /> collection because TextFragment is an aggregate object and it may rearrange internal segments or merge them into single segment.
+             Note that changing TextFragment properties may change inner <see cref="P:Aspose.Pdf.Text.TextFragment.Segments" /> collection because TextFragment is an aggregate object 
+             and it may rearrange internal segments or merge them into single segment.
              If your requirement is to leave the <see cref="P:Aspose.Pdf.Text.TextFragment.Segments" /> collection unchanged, please change inner segments individually.
              </remarks>
       <example>
@@ -1793,6 +2352,16 @@
             Gets or sets placement info
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.Text.TextFragment.EndNote">
+      <summary>
+            Gets or sets the paragraph end note.(for pdf generation only)
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Text.TextFragment.FootNote">
+      <summary>
+            Gets or sets the paragraph foot note.(for pdf generation only)
+            </summary>
+    </member>
     <member name="M:Aspose.Pdf.Heading.#ctor(System.Int32)">
       <summary>
             Initializes a new instance of the Cell class.
@@ -1885,6 +2454,11 @@
     <member name="P:Aspose.Pdf.Image.ImageStream">
       <summary>
             Gets or sets the image stream.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Image.FileType">
+      <summary>
+            Gets or sets the image file type.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.LevelFormat">
@@ -2093,6 +2667,33 @@
     <member name="P:Aspose.Pdf.WebHyperlink.Url">
       <summary>
             Gets or sets the web url.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Layer">
+      <summary>
+            Represents page layer.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Layer.#ctor(System.String,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Aspose.Pdf.Layer" /> class.
+            </summary>
+      <param name="id">The layer id</param>
+      <param name="name">The layer name</param>
+    </member>
+    <member name="P:Aspose.Pdf.Layer.Name">
+      <summary>
+            Gets the layer name.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Layer.Id">
+      <summary>
+            Gets the layer id.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Layer.Contents">
+      <summary>
+            Gets the layer content.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.MobiXmlSaveOptions">
@@ -3899,16 +4500,16 @@
                 switch (eventInfo.EventType)
                 {
                     case HtmlSaveOptions.ProgressEventType.TotalProgress:
-                        Console.WriteLine(String.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.SourcePageAnalized:
-                        Console.WriteLine(String.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.ResultPageCreated:
-                        Console.WriteLine(String.Format("{0}  - Result page's {1} of {2} layout created.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Result page's {1} of {2} layout created.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.ResultPageSaved:
-                        Console.WriteLine(String.Format("{0}  - Result page {1} of {2} exported.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Result page {1} of {2} exported.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     default:
                         break;
@@ -3928,6 +4529,11 @@
               in result HTML document around area that represent source PDF page.
               In essence it concerns of showing of page's paper edges,
               not page border referenced in PDF page itself. 
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.LettersPositioningMethod">
+      <summary>
+              Sets mode of positioning of letters in words in result HTML
             </summary>
     </member>
     <member name="F:Aspose.Pdf.HtmlSaveOptions.ExplicitListOfSavedPages">
@@ -3990,7 +4596,7 @@
               that generates desirable URL.
                 If flag  'SplitCssIntoPages' set, then this custom strategy (if any)
                 must return not exact URL of CSS but rather template string that
-                (after substitution of placeholder with page number with String.Format() 
+                (after substitution of placeholder with page number with string.Format() 
                 function inside converter) can be resolved into URL for this or that page's CSS' URL. 
                    Examples of expected return string in such case are: 'SomeTargetLocation-page_{0}.css','../PartHandlers/GetCss.aspx?DocumentId=45654&amp;CssPage={0}')
             </summary>
@@ -4050,6 +4656,12 @@
              If this property will stay untouched(i.e. null will be leaved as value ), then
              converter will generate class names itself 
              (it wil be something like ".stl_01 {}" ... ".stl_NN {}")
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.PartsEmbeddingMode">
+      <summary>
+             It defines whether referenced files (HTML, Fonts,Images, CSSes)
+             will be embedded into main HTML file or will be generated as apart binary entities 
             </summary>
     </member>
     <member name="F:Aspose.Pdf.HtmlSaveOptions.HtmlMarkupGenerationMode">
@@ -4133,6 +4745,15 @@
         <c>true</c> if [fixed layout]; otherwise, <c>false</c>.
             </value>
     </member>
+    <member name="P:Aspose.Pdf.HtmlSaveOptions.FontSources">
+      <summary>
+            Font sources of pre-saved fonts. 
+            </summary>
+      <remarks>
+            Fonts may be saved preliminarily for cache purpose and then passed into Html conversion process.
+            For example it may be useful in document splitting scenario and processing document pages in multiple threads with single set of fonts.
+            </remarks>
+    </member>
     <member name="P:Aspose.Pdf.HtmlSaveOptions.AdditionalMarginWidthInPoints">
       <summary>
             If attribute 'SplitOnPages=false', than whole HTML representing all input PDF pages wont
@@ -4153,12 +4774,23 @@
     </member>
     <member name="F:Aspose.Pdf.HtmlSaveOptions.FontSavingModes.AlwaysSaveAsWOFF">
       <summary>
-             all referenced fonts will be saved and referenced as WOFF-fonts
+             All referenced fonts will be saved and referenced as WOFF-fonts
             </summary>
     </member>
     <member name="F:Aspose.Pdf.HtmlSaveOptions.FontSavingModes.AlwaysSaveAsTTF">
       <summary>
-             all referenced fonts will be saved and referenced as TTF-fonts
+             All referenced fonts will be saved and referenced as TTF-fonts
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.FontSavingModes.AlwaysSaveAsEOT">
+      <summary>
+             All referenced fonts will be saved and referenced as EOT-fonts
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.FontSavingModes.SaveInAllFormats">
+      <summary>
+             All referenced fonts will be saved (and referenced in CSS) as 3 independent files : EOT, TTH,WOFF.
+              It increases size of output data but makes output sutable for overhelming majority of web brawsers 
             </summary>
     </member>
     <member name="T:Aspose.Pdf.HtmlSaveOptions.CssSavingInfo">
@@ -4255,6 +4887,22 @@
                Should be set by custom code if it cannot or should not define URL that 
                will be used in generated HTML for referencing of that CSS.
                  If it's 'true', then CSS file will be saved in standard way in standard place. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.HtmlSaveOptions.LettersPositioningMethods">
+      <summary>
+              It enumerates possible modes of positioning of letters in words in result HTML
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.LettersPositioningMethods.UseEmUnitsAndCompensationOfRoundingErrorsInCss">
+      <summary>
+              It's default method. It uses EM-units and special alhorithm of compensation of rounding errors
+              It's preferable for usage in IE10.0 and more fresh versions and gives better scaling of captions when scaling is necessary
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.LettersPositioningMethods.UsePixelUnitsInCssLetterSpacingForIE">
+      <summary>
+              It allows to get sometimes more precise results in old IE browser versions
             </summary>
     </member>
     <member name="T:Aspose.Pdf.HtmlSaveOptions.HtmlImageSavingInfo">
@@ -4462,6 +5110,37 @@
              i.e. will be left only content that is inside <body></body> tags
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.HtmlSaveOptions.PartsEmbeddingModes">
+      <summary>
+             This enum enumerates possible modes of embedding of files referenced in HTML
+             It allows to control whether referenced files (HTML, Fonts,Images, CSSes)
+             will be embedded into main HTML file or will be generated as apart binary entities 
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.PartsEmbeddingModes.EmbedAllIntoHtml">
+      <summary>
+              Enforces embed all referenced files(Css,Images,Fonts) into generated HTML markup (i.e. into HTML itself)
+              This approach generates one HTML file, but total size of output 
+              becames bigger(because Base64 encoding of binaries is in use) and not all browsers (especially legacy) 
+              successfully process binaries embedded into HTML. But it allows get HTML that contains whole result, without any additional files.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.PartsEmbeddingModes.EmbedCssOnly">
+      <summary>
+              Enforces put apart all referenced files except CSS (Images and Fonts)
+              I.e. CSS will be embedded into result HTML , and all other referenced files(Images and Fonts)
+               will be processed as external parts
+              It generates HTML that is sutable for wide set of browsers
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.HtmlSaveOptions.PartsEmbeddingModes.NoEmbedding">
+      <summary>
+              Enforces put apart referenced files(Css,Images,Fonts) 
+              This approach generates set of files, but total size of output 
+              becames smaller(because no Base64 encoding of binaries is in use)
+              Also such approach generates HTML that is sutable for wide set of browsers
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.LoadOptions">
       <summary>
              LoadOptions type holds level of abstraction on individual load options
@@ -4538,6 +5217,23 @@
     </member>
     <!-- Badly formed XML comment ignored for member "T:Aspose.Pdf.Plugins.PluginsFactory" -->
     <!-- Badly formed XML comment ignored for member "M:Aspose.Pdf.Plugins.PluginsFactory.GetPlugin(System.String,System.String)" -->
+    <member name="T:Aspose.Pdf.Text.FontAbsorber">
+      <summary>
+            Represents an absorber object of fonts.
+            Performs search for fonts and provides access to search results via <see cref="P:Aspose.Pdf.Text.FontAbsorber.Fonts" /> collection.
+            </summary>
+    </member>
+    <member name="M:Aspose.Pdf.Text.FontAbsorber.Visit(Aspose.Pdf.Document)">
+      <summary>
+            Performs search on the specified document.
+            </summary>
+      <param name="pdf">Pdf pocument object.</param>
+    </member>
+    <member name="P:Aspose.Pdf.Text.FontAbsorber.Fonts">
+      <summary>
+            Gets collection of search occurrences that are presented with <see cref="T:Aspose.Pdf.Text.Font" /> objects.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.ImportFormat">
       <summary>
              Specifies import format.
@@ -4826,6 +5522,12 @@
     <member name="F:Aspose.Pdf.Devices.CompressionType.None">
       <summary>
             Specifies no compression. Can be passed to the Tiff encoder as a parameter that belongs to the compression category.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Devices.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Devices</b> namespace provides classes which are used for representing document as image(s) or a plain text.
+            So document can be sent on to textual or various graphic devices which means we want to get it textual or graphic representation.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.Devices.DocumentDevice">
@@ -5820,6 +6522,20 @@
             Right to left direction.
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.Generator.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Generator</b> namespace provides classes used for composing of PDF document
+             1) via API from scratch
+             2) via loading of document from logical model, described with special XML 
+             3) via mix of two aforementioned approaches (i.e. loading from XML and then customizing via API).
+             4) via creation of PDF-analogue of supplied document in one of that formats : PCL/HTML/SVG/XSLFO
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf</b> is a root namespace for all classes of Aspose.Pdf library which are either directly in it like <b>Document</b> or indirectly through several subnamespaces.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Document">
       <summary>
             Class representing PDF document
@@ -5860,9 +6576,9 @@
     </member>
     <member name="M:Aspose.Pdf.Document.#ctor(System.IO.Stream,System.String)">
       <summary>
-            This metod will be implemented in the next release.
+            Initialize new Document instance from the <paramref name="input" /> stream.
             </summary>
-      <param name="input">Imput stream object.</param>
+      <param name="input">Input stream object, corresponding pdf is password protected.</param>
       <param name="password">User or owner password.</param>
     </member>
     <member name="M:Aspose.Pdf.Document.Save(System.String)">
@@ -5992,7 +6708,7 @@
     </member>
     <member name="M:Aspose.Pdf.Document.#ctor(System.String,Aspose.Pdf.LoadOptions)">
       <summary>
-            Opens an existing document from a file providing necessary converting to get pdf document.
+            Opens an existing document from a file providing necessary converting options to get pdf document.
             </summary>
       <param name="filename">
             Input file to convert into pdf document.
@@ -6451,6 +7167,21 @@
             If this flag is set to true, all document objects will be checked and unused objects (i.e. objects which does not have any reference) are removed from document.
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.Document.OptimizationOptions.CompressImages">
+      <summary>
+            If this flag is set to true images will be compressed in the document. compression level is specfied with ImageQuality property.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Document.OptimizationOptions.ImageQuality">
+      <summary>
+            Specifie slevel of image compression when CompressIamges flag is used.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Document.OptimizationOptions.UnembedFonts">
+      <summary>
+            Make fonts not embedded if set to true. 
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.DocumentInfo">
       <summary>
             Represents meta information of PDF document.
@@ -6544,6 +7275,11 @@
       <param name="key">The key whose value to get or set.</param>
       <returns>
       </returns>
+    </member>
+    <member name="T:Aspose.Pdf.DOM.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.DOM</b> namespace provides several aditional support classes for DOM.
+            </summary>
     </member>
     <member name="T:Aspose.Pdf.DOM.Matrix">
       <summary>
@@ -7231,7 +7967,7 @@
     </member>
     <member name="P:Aspose.Pdf.Facades.Bookmark.Destination">
       <summary>
-            Gets or sets bookmark's destination page. Required if action is set as "".
+            Gets or sets bookmark's destination page. Required if action is set as string.Empty.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.Facades.Bookmark.ItalicFlag">
@@ -12573,6 +13309,11 @@
       <param name="format">The format of the image.</param>
       <param name="quality">The Jpeg file's quality (0~100), 0 is lowest and 100 is highest</param>
     </member>
+    <member name="P:Aspose.Pdf.Facades.PdfConverter.CoordinateType">
+      <summary>
+            Gets or sets the page coordinate type (Media/Crop boxes). CropBox value is used by default.
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.Facades.PdfConverter.ShowHiddenAreas">
       <summary>
             Gets or sets flag that controls visibility of hidden areas on the page.
@@ -13031,7 +13772,7 @@
       <summary>
             Gets the list of attachments.
             </summary>
-      <returns>Returns an ArrayList.</returns>
+      <returns>Returns a List&lt;FileSpecificatio&gt;&gt;.</returns>
     </member>
     <member name="P:Aspose.Pdf.Facades.PdfExtractor.StartPage">
       <summary>
@@ -14213,6 +14954,35 @@
                 PdfFileEditor.ContentsResizeValue.Percents(10)
                    );
             fileEditor.ResizeContents(doc, new int[] { 1, 2,.3}, parameters);
+            doc.Save("output.pdf");
+            </code>
+      </example>
+    </member>
+    <member name="M:Aspose.Pdf.Facades.PdfFileEditor.ResizeContents(Aspose.Pdf.Document,Aspose.Pdf.Facades.PdfFileEditor.ContentsResizeParameters)">
+      <summary>
+            Resizes pages of document. Blank margins are added around of shrinked page.
+            </summary>
+      <param name="source">Source document.</param>
+      <param name="parameters">Resize parameters.</param>
+      <example>
+        <code lang="C#">
+            PdfFileEditor fileEditor = new PdfFileEditor();
+            Document doc = new Document("input.pdf");
+            PdfFileEditor.ContentsResizeParameters parameters = new PdfFileEditor.ContentsResizeParameters(
+                //left margin = 10% of page width
+                PdfFileEditor.ContentsResizeValue.Percents(10),
+                //new contents width calculated automatically as width - left margin - right margin (100% - 10% - 10% = 80%)
+                null,
+                //right margin is 10% of page 
+                PdfFileEditor.ContentsResizeValue.Percents(10),
+                //top margin = 10% of height
+                PdfFileEditor.ContentsResizeValue.Percents(10),
+                //new contents height is calculated automatically (similar to width)
+                null,
+                //bottom margin is 10%
+                PdfFileEditor.ContentsResizeValue.Percents(10)
+                   );
+            fileEditor.ResizeContents(doc, parameters);
             doc.Save("output.pdf");
             </code>
       </example>
@@ -15474,7 +16244,7 @@
     </member>
     <member name="M:Aspose.Pdf.Facades.PdfFileSecurity.SetPrivilege(Aspose.Pdf.Facades.DocumentPrivilege)">
       <summary>
-            Sets Pdf file security without being encrypted.
+            Sets Pdf file security with empty user/owner passwords.
             The owner password will be added by a random string.
             </summary>
       <param name="privilege">Set privilege.</param>
@@ -15960,14 +16730,14 @@
       <summary>
              Gets the names of all not empty signatures.
              </summary>
-      <returns>Return a arrayList.</returns>
+      <returns>Return an IList.</returns>
       <example>
         <code>
              [C#]
              string inFile=TestPath + "example1.pdf";
              PdfFileSignature pdfSign=new PdfFileSignature();
              pdfSign.BindPdf(inFile); 
-             ArrayList names=pdfSign.GetSignNames();
+             IList names=pdfSign.GetSignNames();
             for(int i=0;i&lt;names.Count;i++)
             {
               Console.WriteLine("signature name:"+(string)names[i]);
@@ -15982,7 +16752,7 @@
              [Visual Basic]
              Dim pdfSign as PdfFileSignature =new  PdfFileSignature
              pdfSign.BindPdf(inFile)
-             Dim names as ArrayList
+             Dim names as IList
              names=pdfSign.GetSignNames()
              For i=0 To names.Count
             
@@ -16002,7 +16772,7 @@
       <summary>
             Gets the names of all empty signature fields.
             </summary>
-      <returns>Return a arrayList.</returns>
+      <returns>Return an IList.</returns>
     </member>
     <member name="M:Aspose.Pdf.Facades.PdfFileSignature.IsContainSignature">
       <summary>
@@ -16010,7 +16780,26 @@
             </summary>
       <returns>Return a  result of bool type.</returns>
     </member>
+    <member name="M:Aspose.Pdf.Facades.PdfFileSignature.ContainsSignature">
+      <summary>
+            Checks if the pdf  has a digital signature or not.
+            </summary>
+      <returns>Return a  result of bool type.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.Facades.PdfFileSignature.ContainsUsageRights">
+      <summary>
+            Checks if the pdf has a usage rights or not.
+            </summary>
+      <returns>Returns a result of bool type.</returns>
+    </member>
     <member name="M:Aspose.Pdf.Facades.PdfFileSignature.IsCoversWholeDocument(System.String)">
+      <summary>
+            Checks if the signature covers the whole document.
+            </summary>
+      <param name="signName">The name of signature.</param>
+      <returns>Return a  result of bool type.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.Facades.PdfFileSignature.CoversWholeDocument(System.String)">
       <summary>
             Checks if the signature covers the whole document.
             </summary>
@@ -16029,6 +16818,11 @@
             Gets the toltal revision.
             </summary>
       <returns>Return the total number of signature revision.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.Facades.PdfFileSignature.RemoveUsageRights">
+      <summary>
+            Removes the usage rights entry.
+            </summary>
     </member>
     <member name="M:Aspose.Pdf.Facades.PdfFileSignature.RemoveSignature(System.String)">
       <summary>
@@ -17045,7 +17839,7 @@
             Gets or sets display duration for pages.
             </summary>
     </member>
-    <member name="P:Aspose.Pdf.Facades.PdfPageEditor.Pages">
+    <member name="P:Aspose.Pdf.Facades.PdfPageEditor.ProcessPages">
       <summary>
             Gets or sets the page numbers to be edited. By default, each page would be edited.
             </summary>
@@ -17563,6 +18357,11 @@
             Disposes the facade resources.
             </summary>
     </member>
+    <member name="E:Aspose.Pdf.Facades.PdfViewer.PdfQueryPageSettings">
+      <summary>
+            Adds/removes subscription on the last page printing event.
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.Facades.PdfViewer.ShowHiddenAreas">
       <summary>
             Gets or sets flag that controls visibility of hidden areas on the page.
@@ -17576,6 +18375,11 @@
     <member name="E:Aspose.Pdf.Facades.PdfViewer.EndPrint">
       <summary>
             Adds/removes subscription on the last page printing event.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Facades.PdfViewer.CoordinateType">
+      <summary>
+            Gets or sets the page coordinate type (Media/Crop boxes). CropBox value is used by default.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.Facades.PdfViewer.PrintAsImage">
@@ -18322,7 +19126,7 @@
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.DisplayDocTitle">
       <summary>
-            A flag specifying whether the window’s title bar should display the document title
+            A flag specifying whether the window痴 title bar should display the document title
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.NonFullScreenPageModeUseOC">
@@ -18377,27 +19181,27 @@
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.HideToolbar">
       <summary>
-            A flag specifying whether to hide the conforming reader’s tool bars when the document is active.
+            A flag specifying whether to hide the conforming reader痴 tool bars when the document is active.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.HideMenubar">
       <summary>
-            A flag specifying whether to hide the conforming reader’s menu bar when the document is active.
+            A flag specifying whether to hide the conforming reader痴 menu bar when the document is active.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.HideWindowUI">
       <summary>
-            A flag specifying whether to hide user interface elements in the document’s window (such as scroll bars and navigation controls), leaving only the document’s contents displayed.
+            A flag specifying whether to hide user interface elements in the document痴 window (such as scroll bars and navigation controls), leaving only the document痴 contents displayed.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.FitWindow">
       <summary>
-            A flag specifying whether to resize the document’s window to fit the size of the first displayed page.
+            A flag specifying whether to resize the document痴 window to fit the size of the first displayed page.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.CenterWindow">
       <summary>
-            A flag specifying whether to position the document’s window in the center of the screen.
+            A flag specifying whether to position the document痴 window in the center of the screen.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Facades.ViewerPreference.NonFullScreenPageModeUseNone">
@@ -18512,6 +19316,13 @@
     <member name="M:Aspose.Pdf.FileSpecification.#ctor">
       <summary>
             Create new empty file specification. 
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.FileSpecification.Encoding">
+      <summary>
+            Gets or sets encoding format.
+            Possible values: Zip - file is compressed with ZIP, 
+            None - file is not compressed.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.FileSpecification.IncludeContents">
@@ -18885,22 +19696,22 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnEnter">
       <summary>
-            Gets or sets an action to be performed when the cursor enters the annotation’s active area.
+            Gets or sets an action to be performed when the cursor enters the annotation痴 active area.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnExit">
       <summary>
-            Gets or sets an action to be performed when the cursor exits the annotation’s active area.
+            Gets or sets an action to be performed when the cursor exits the annotation痴 active area.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnPressMouseBtn">
       <summary>
-            Gets or sets an action to be performed when the mouse button is pressed inside the annotation’s active area.
+            Gets or sets an action to be performed when the mouse button is pressed inside the annotation痴 active area.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnReleaseMouseBtn">
       <summary>
-            Gets or sets an action to be performed when the mouse button is released inside the annotation’s active area.
+            Gets or sets an action to be performed when the mouse button is released inside the annotation痴 active area.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnReceiveFocus">
@@ -18920,12 +19731,12 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnShowPage">
       <summary>
-            Gets or sets an action to be performed when the page containing the annotation becomes visible in the viewer application’s user interface.
+            Gets or sets an action to be performed when the page containing the annotation becomes visible in the viewer application痴 user interface.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnHidePage">
       <summary>
-            Gets or sets an action to be performed when the page containing the annotation is no longer visible in the viewer application’s user interface.
+            Gets or sets an action to be performed when the page containing the annotation is no longer visible in the viewer application痴 user interface.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationActionCollection.OnLostFocus">
@@ -19057,14 +19868,14 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationFlags.NoZoom">
       <summary>
-            If set, do not scale the annotation’s appearance to match the magnification of the page.
+            If set, do not scale the annotation痴 appearance to match the magnification of the page.
             The location of the annotation on the page (defined by the upper-left corner of its annotation rectangle)
             remains fixed, regardless of the page magnification.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationFlags.NoRotate">
       <summary>
-            If set, do not rotate the annotation’s appearance to match the rotation of the page.
+            If set, do not rotate the annotation痴 appearance to match the rotation of the page.
             The upper-left corner of the annotation rectangle remains in a fixed location on the page,
             regardless of the page rotation.
             </summary>
@@ -19087,7 +19898,7 @@
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationFlags.Locked">
       <summary>
             If set, do not allow the annotation to be deleted or its properties (including position and size)
-            to be modified by the user. However, this flag does not restrict changes to the annotation’s contents,
+            to be modified by the user. However, this flag does not restrict changes to the annotation痴 contents,
             such as the value of a form field.
             </summary>
     </member>
@@ -19296,6 +20107,59 @@
       <param name="array">Array where items must be copied.</param>
       <param name="index">Index where items must be copied.</param>
     </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Add(System.String,Aspose.Pdf.XForm)">
+      <summary>
+            Add X form for specifed key.
+            </summary>
+      <param name="key">
+            Element key.
+            </param>
+      <param name="value">
+            XForm object value.
+            </param>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.ContainsKey(System.String)">
+      <summary>
+            Determines does this dictionary contasins specified key.
+            </summary>
+      <param name="key">Key to search in the dictionary.</param>
+      <returns>true if key is found.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Remove(System.String)">
+      <summary>
+            Removes key from the dictionary.
+            </summary>
+      <param name="key">Key to be removed from the dictionary.</param>
+      <returns>true if key was successfully removed.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.TryGetValue(System.String,Aspose.Pdf.XForm@)">
+      <summary>
+            Tries to find key in the dictionary and retreives value if found.
+            </summary>
+      <param name="key">Key to search in the dictionary.</param>
+      <param name="value">Retreived value.</param>
+      <returns>true if key was found.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,Aspose.Pdf.XForm})">
+      <summary>
+            Adds pair with key and value into the dictionary.
+            </summary>
+      <param name="item">Item to be added.</param>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,Aspose.Pdf.XForm})">
+      <summary>
+            Checks does specified key-value pair is contained in the dictionary.
+            </summary>
+      <param name="item">Key-value pair.</param>
+      <returns>true if this pauir was found.</returns>
+    </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,Aspose.Pdf.XForm})">
+      <summary>
+            Removes key/value pair from the colleciton.
+            </summary>
+      <param name="item">Key/value pair to be removed.</param>
+      <returns>true if pair was found and removed.</returns>
+    </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.IsReadOnly">
       <summary>
             Gets a value indicating whether dictionary is read-only.
@@ -19334,7 +20198,7 @@
             Gets the number of elements contained in the dictionary. 
             </summary>
     </member>
-    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Item(System.Object)">
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Item(System.String)">
       <summary>
             Represents convenient form for getting appearance streams.
             </summary>
@@ -19346,6 +20210,19 @@
       <returns>
             XForm object (appearance stream) which corresponds to the given key.
             </returns>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Item(System.Object)">
+      <summary>
+             Represents convenient form for getting appearance streams.
+             </summary>
+      <param name="key">
+             Represents path to appearance stream. 
+             If appearance dictionary has subdictionaries, then path must contain 2 parts (<see cref="P:Aspose.Pdf.InteractiveFeatures.Annotations.AppearanceDictionary.Keys" />), 
+             else path has only one part.
+             </param>
+      <returns>
+             XForm object (appearance stream) which corresponds to the given key.
+             </returns>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.CaretAnnotation">
       <summary>
@@ -19385,7 +20262,7 @@
             </summary>
       <param name="reader">Reader of XFDF file.</param>
     </member>
-    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Annotation.ReadXfdfElements(System.Collections.Hashtable)">
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.Annotation.ReadXfdfElements(System.Collections.Generic.Dictionary{System.String,System.String})">
       <summary>
             When overridden in a derived class, import annotation elements from XFDF.
             </summary>
@@ -19550,7 +20427,7 @@
             </summary>
       <param name="reader">Reader of XFDF file.</param>
     </member>
-    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.MarkupAnnotation.ReadXfdfElements(System.Collections.Hashtable)">
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.MarkupAnnotation.ReadXfdfElements(System.Collections.Generic.Dictionary{System.String,System.String})">
       <summary>
             When overridden in a derived class, import annotation elements from XFDF.
             </summary>
@@ -19673,7 +20550,7 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.CommonFigureAnnotation.InteriorColor">
       <summary>
-            Interior color with which to fill the annotation’s rectangle or ellipse.
+            Interior color with which to fill the annotation痴 rectangle or ellipse.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.CommonFigureAnnotation.Frame">
@@ -19760,7 +20637,7 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.FreeTextAnnotation.Justification">
       <summary>
-            Gets or set a code specifying the form of quadding (justification) to be used in displaying the annotation’s text.
+            Gets or set a code specifying the form of quadding (justification) to be used in displaying the annotation痴 text.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.FreeTextAnnotation.DefaultAppearance">
@@ -19874,6 +20751,19 @@
       <param name="rect">The annotation rectangle, defining the location of the annotation on the page.</param>
       <param name="inkList">An array of Point[] arrays, each representing a stroked path.</param>
     </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.InkAnnotation.#ctor(Aspose.Pdf.Page,Aspose.Pdf.Rectangle,System.Collections.Generic.IList{Aspose.Pdf.Point[]})">
+      <summary>
+            Creates new Ink annotation on the specified page.
+            </summary>
+      <param name="page">The document's page where annotation should be created.</param>
+      <param name="rect">The annotation rectangle, defining the location of the annotation on the page.</param>
+      <param name="inkList">An array of Point[] arrays, each representing a stroked path.</param>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.InkAnnotation.CapStyle">
+      <summary>
+            Style of ink annotation line endings.
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.InkAnnotation.InkList">
       <summary>
             Gets or sets list of gestures that are independent lines which are represented by Point[] arrays.
@@ -19952,6 +20842,11 @@
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.LineAnnotation.CaptionPosition">
       <summary>
             Gets or sets annotation caption position.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.LineAnnotation.Measure">
+      <summary>
+            Measure units specifed for this annotation.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.LineAnnotation.Intent">
@@ -20043,7 +20938,7 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.MovieAnnotation.Aspect">
       <summary>
-            Gets or sets the width and height of the movie’s bounding box, in pixels, specified as [ width height ].
+            Gets or sets the width and height of the movie痴 bounding box, in pixels, specified as [ width height ].
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.PolyAnnotation">
@@ -20077,7 +20972,7 @@
             </summary>
       <param name="reader">Reader of XFDF file.</param>
     </member>
-    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.PolyAnnotation.ReadXfdfElements(System.Collections.Hashtable)">
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.PolyAnnotation.ReadXfdfElements(System.Collections.Generic.Dictionary{System.String,System.String})">
       <summary>
             When overridden in a derived class, import annotation elements from XFDF.
             </summary>
@@ -20090,7 +20985,7 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.PolyAnnotation.InteriorColor">
       <summary>
-            Gets or sets the interior color with which to fill the annotation’s line endings.
+            Gets or sets the interior color with which to fill the annotation痴 line endings.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.PolyAnnotation.StartingStyle">
@@ -20171,6 +21066,11 @@
       <param name="rect">The annotation rectangle, defining the location of the annotation on the page.</param>
       <param name="vertices">An array of polygon vertices points.</param>
     </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.PolylineAnnotation.Measure">
+      <summary>
+            Measure units specifed for this annotation.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.PopupAnnotation">
       <summary>
             Represents the pop-up annotation that displays text in a pop-up window for entry and editing.
@@ -20192,6 +21092,12 @@
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.PopupAnnotation.Open">
       <summary>
             Gets or sets a flag specifying whether the pop-up annotation should initially be displayed open.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.PopupAnnotation.Parent">
+      <summary>
+            Gets or sets the parent annotation with which this pop-up annotation shall be associated.
+            If this entry is present, the parent annotation痴 Contents, M, C, and T entries shall override those of the pop-up annotation itself.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.ReplyType">
@@ -20216,7 +21122,7 @@
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.SoundAnnotation">
       <summary>
-            Represents a sound annotation that contains sound recorded from the computer’s microphone or imported from a file.
+            Represents a sound annotation that contains sound recorded from the computer痴 microphone or imported from a file.
             </summary>
     </member>
     <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.SoundAnnotation.Accept(Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationSelector)">
@@ -20978,6 +21884,13 @@
             </summary>
       <returns>List of field templates.</returns>
     </member>
+    <member name="M:Aspose.Pdf.InteractiveFeatures.Forms.XFA.SetFieldImage(System.String,System.IO.Stream)">
+      <summary>
+            Sets image for XFA field. 
+            </summary>
+      <param name="fieldName">Name of the field.</param>
+      <param name="image">Stream which contains image.</param>
+    </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Forms.XFA.Template">
       <summary>
             XFA Template component of an XFA form.
@@ -21345,7 +22258,7 @@
       <summary>
             Gets an integer value representing the error correction coefficient. 
             For PDF417, shall be from 0 to 8. For QRCode, shall be from 0 to 3 
-            (0 for ‘L’, 1 for ‘M’, 2 for ‘Q’, and 3 for ‘H’).
+            (0 for 銑・ 1 for 閃・ 2 for 漸・ and 3 for 践・.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Forms.BoxStyle">
@@ -21586,6 +22499,11 @@
     <member name="P:Aspose.Pdf.InteractiveFeatures.Forms.ComboBoxField.Selected">
       <summary>
             Gets or sets index of currently selected item in combo box list.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Forms.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.InteractiveFeatures.Forms</b> namespace has classes which describes forms (standard, static, dynamic) and various types of fields like text box, list box, radio button etc.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Forms.FileSelectBoxField">
@@ -22255,7 +23173,7 @@
             Gets or sets default style string of the rich text field.
             </summary>
     </member>
-    <member name="P:Aspose.Pdf.InteractiveFeatures.Forms.RichTextBoxField.RValue">
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Forms.RichTextBoxField.RichTextValue">
       <summary>
             Gets or sets rich text value.
             </summary>
@@ -22282,7 +23200,7 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Forms.ScalingMode.Proportional">
       <summary>
-            Scale the icon to fit the width or height of the annotation rectangle while maintaining the icon’s original aspect ratio.
+            Scale the icon to fit the width or height of the annotation rectangle while maintaining the icon痴 original aspect ratio.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Forms.ScalingMode.Anamorphic">
@@ -22493,7 +23411,7 @@
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.HighlightingMode">
       <summary>
-            Enumerates the annotation’s highlighting mode, the visual effect to be used when the mouse button is pressed or held down inside its active area.
+            Enumerates the annotation痴 highlighting mode, the visual effect to be used when the mouse button is pressed or held down inside its active area.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.HighlightingMode.None">
@@ -22508,12 +23426,12 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.HighlightingMode.Outline">
       <summary>
-            Invert the annotation’s border.
+            Invert the annotation痴 border.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.HighlightingMode.Push">
       <summary>
-            Display the annotation’s down appearance, if any. If no down appearance is defined, offset the contents of the annotation rectangle to appear as if it were being pushed below the surface of the page.
+            Display the annotation痴 down appearance, if any. If no down appearance is defined, offset the contents of the annotation rectangle to appear as if it were being pushed below the surface of the page.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.HighlightingMode.Toggle">
@@ -22563,6 +23481,12 @@
     <member name="P:Aspose.Pdf.InteractiveFeatures.LaunchAction.NewWindow">
       <summary>
             Gets or sets a flag specifying whether to open the destination document in a new window (affect PDF documents only).
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.InteractiveFeatures</b> namespace provides classes for working with various types of actions, destinations and other features of document 
+            which traditionally called as interactive providing means user can intercommunicate with it.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.SubmitFormAction">
@@ -22649,6 +23573,11 @@
     <member name="P:Aspose.Pdf.InteractiveFeatures.SubmitFormAction.Url">
       <summary>
             Destination URL.
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.InteractiveFeatures.Annotations</b> namespace provides classes for almost all types of annotations document can have.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.TextStyle">
@@ -23100,6 +24029,11 @@
     </member>
     <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Border.VCornerRaduis">
       <summary>
+            Obsolete property. Please use VCornerRadius instead. 
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.InteractiveFeatures.Annotations.Border.VCornerRadius">
+      <summary>
             Gets or sets vertical corner radius.
             </summary>
     </member>
@@ -23177,7 +24111,7 @@
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.CaptionPosition">
       <summary>
-            Enumeration of the annotation’s caption positioning.
+            Enumeration of the annotation痴 caption positioning.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.CaptionPosition.Inline">
@@ -23202,7 +24136,7 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.CaretSymbol.Paragraph">
       <summary>
-            A new paragraph symbol (¶) should be associated with the caret.
+            A new paragraph symbol (ｶ) should be associated with the caret.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.Dash">
@@ -23264,17 +24198,17 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.Square">
       <summary>
-            A square filled with the annotation’s interior color, if any.
+            A square filled with the annotation痴 interior color, if any.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.Circle">
       <summary>
-            A circle filled with the annotation’s interior color, if any.
+            A circle filled with the annotation痴 interior color, if any.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.Diamond">
       <summary>
-            A diamond shape filled with the annotation’s interior color, if any.
+            A diamond shape filled with the annotation痴 interior color, if any.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.OpenArrow">
@@ -23284,7 +24218,7 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.ClosedArrow">
       <summary>
-            Two short lines meeting in an acute angle as in the OpenArrow style and connected by a third line to form a triangular closed arrowhead filled with the annotation’s interior color, if any.
+            Two short lines meeting in an acute angle as in the OpenArrow style and connected by a third line to form a triangular closed arrowhead filled with the annotation痴 interior color, if any.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.LineEnding.Butt">
@@ -23384,7 +24318,7 @@
     </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Annotations.TextAnnotation">
       <summary>
-            Represents a text annotation that is a “sticky note” attached to a point in the PDF document.
+            Represents a text annotation that is a 都ticky note・attached to a point in the PDF document.
             </summary>
     </member>
     <member name="M:Aspose.Pdf.InteractiveFeatures.Annotations.TextAnnotation.Accept(Aspose.Pdf.InteractiveFeatures.Annotations.AnnotationSelector)">
@@ -23460,9 +24394,24 @@
             Check icon.
             </summary>
     </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.TextIcon.Cross">
+      <summary>
+            Cross icon.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.TextIcon.Circle">
+      <summary>
+            Circle icon.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.InteractiveFeatures.Annotations.TextIcon.Star">
+      <summary>
+            Star icon.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.InteractiveFeatures.Justification">
       <summary>
-            Enumerates the forms of quadding (justification) to be used in displaying the annotation’s text.
+            Enumerates the forms of quadding (justification) to be used in displaying the annotation痴 text.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.Justification.Left">
@@ -25138,7 +26087,7 @@
     </member>
     <member name="P:Aspose.Pdf.Operator.SetDash.Pattern">
       <summary>
-            Dash pattern. Array’s elements shall be numbers that specify the lengths of alternating dashes and gaps.
+            Dash pattern. Array痴 elements shall be numbers that specify the lengths of alternating dashes and gaps.
             In case of one element array dash and gap lengths are equal.
             </summary>
     </member>
@@ -26651,7 +27600,7 @@
             <code lang="C#">
             Document doc = new Document("input.pdf");
             OperatorCollection oc = doc.Pages[1].Contents;
-            ArrayList opList = new ArrayList();
+            List&lt;Operator&gt; opList = new List&lt;Operator&gt;();
             opList.Add(oc[1]);
             oc.Delete(opList);
             </code></example>
@@ -26667,7 +27616,7 @@
             <code lang="C#">
             Document doc = new Document("input.pdf");
             OperatorCollection oc = doc.Pages[1].Contents;
-            ArrayList opList = new ArrayList();
+            List&lt;Operator&gt; opList = new List&lt;Operator&gt;();
             opList.Add(new Operator.q());
             opList.Add(new Operator.Q());
             oc.Insert(1, opList);
@@ -26700,7 +27649,7 @@
             <code lang="C#">
             Document doc = new Document("input.pdf");
             OperatorCollection oc = doc.Pages[1].Contents;
-            ArrayList opList = new ArrayList();
+            List&lt;Operator&gt; opList = new List&lt;Operator&gt;();
             opList.Add(new Operator.q());
             opList.Add(new Operator.Q());
             oc.Add(opList);
@@ -27573,6 +28522,12 @@
       <param name="considerRotation">If true then rotation of the page will be considered in rect calculation.</param>
       <returns>Rectangle of the page.</returns>
     </member>
+    <member name="M:Aspose.Pdf.Page.CalculateContentBBox">
+      <summary>
+            Calculates bbox value - rectangle containing contents without visible margins.
+            </summary>
+      <returns>Bbox value - rectangle containing contents without visible margins</returns>
+    </member>
     <member name="M:Aspose.Pdf.Page.SendTo(Aspose.Pdf.Devices.PageDevice,System.IO.Stream)">
       <summary>
             Sends page to process with given page device.
@@ -27699,21 +28654,27 @@
     </member>
     <member name="P:Aspose.Pdf.Page.TocInfo">
       <summary>
-            The table of contents info.
+            Gets or sets table of contents info.
             </summary>
       <value>The table of contents info - default null. If it set this page will contain table of contents.</value>
     </member>
     <member name="P:Aspose.Pdf.Page.Header">
       <summary>
-            The page header.
+            Gets or sets page header.
             </summary>
       <value>The page header.</value>
     </member>
+    <member name="P:Aspose.Pdf.Page.Layers">
+      <summary>
+            Gets or sets layers collection.
+            </summary>
+      <value>The layers collection.</value>
+    </member>
     <member name="P:Aspose.Pdf.Page.Footer">
       <summary>
-            The page header.
+            Gets or sets page footer.
             </summary>
-      <value>The page header.</value>
+      <value>The page footer.</value>
     </member>
     <member name="P:Aspose.Pdf.Page.Paragraphs">
       <summary>
@@ -27751,6 +28712,12 @@
             images.
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.Page.NoteLineStyle">
+      <summary>
+            Gets or sets the line style for notes.(for generator only)
+            </summary>
+      <value>The note style.</value>
+    </member>
     <member name="P:Aspose.Pdf.Page.TabOrder">
       <summary>
             Gets or sets tab order of the page. 
@@ -27787,7 +28754,7 @@
     </member>
     <member name="P:Aspose.Pdf.Page.Group">
       <summary>
-            Gets or sets a group attributes class specifying the attributes of the page’s page group for use in the transparent imaging model.
+            Gets or sets a group attributes class specifying the attributes of the page痴 page group for use in the transparent imaging model.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.Page.Annotations">
@@ -28096,6 +29063,11 @@
     <member name="F:Aspose.Pdf.PageLayout.TwoPageRight">
       <summary>
             Display the pages two at a time, with odd-numbered pages on the right.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.PageLayout.Default">
+      <summary>
+            Default layout.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.PageNumberStamp">
@@ -28825,6 +29797,12 @@
             </summary>
       <param name="obj">The object.</param>
     </member>
+    <member name="M:Aspose.Pdf.Cells.Remove(Aspose.Pdf.Cell)">
+      <summary>
+            Remove cell set from collection.
+            </summary>
+      <param name="cell">The cell object.</param>
+    </member>
     <member name="M:Aspose.Pdf.Cells.Insert(System.Int32,Aspose.Pdf.Cell)">
       <summary>
             Insert cell to collection.
@@ -29351,6 +30329,14 @@
       <seealso cref="T:Aspose.Pdf.Text.FontRepository" />
       <seealso cref="T:Aspose.Pdf.Document" />
     </member>
+    <member name="M:Aspose.Pdf.Text.Font.Save(System.IO.Stream)">
+      <summary>
+            Saves the font into the stream.
+            Note that the font is saved to intermediate TTF format intended to be used in a converted copy of the original document only.
+            The font file is not intended to be used outside the original document context.
+            </summary>
+      <param name="stream">Stream to save the font.</param>
+    </member>
     <member name="P:Aspose.Pdf.Text.Font.FontName">
       <summary>
              Gets font name of the <see cref="T:Aspose.Pdf.Text.Font" /> object.
@@ -29616,7 +30602,7 @@
              doc.Save(@"D:\Tests\output.pdf"); 
             	</code></example>
       <param name="fontFamilyName">Font family name.</param>
-      <param name="style">Font style value.</param>
+      <param name="stl">Font style value.</param>
       <returns>Font object corresponding to search request parameters.</returns>
     </member>
     <member name="M:Aspose.Pdf.Text.FontRepository.OpenFont(System.IO.Stream,Aspose.Pdf.Text.FontTypes)">
@@ -30404,6 +31390,11 @@
             Gets or sets text edit options. The options define special behavior when requested symbol cannot be written with font.
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.Text.TextFragmentAbsorber.TextReplaceOptions">
+      <summary>
+            Gets or sets text replace options. The options define behavior when text fragment is replaced to more short.
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.Text.TextFragmentAbsorber.ExtractionOptions">
       <summary>
             Gets or sets text extraction options.
@@ -30610,7 +31601,7 @@
       <remarks>
             HorizontalAlignment.None is equal to HorizontalAlignment.Left.
             
-            Note that TextState.HorizontalAlignment property works in new document deneration generation scenarios only.
+            Note that TextState.HorizontalAlignment property works in new document generation scenarios only.
             </remarks>
     </member>
     <member name="M:Aspose.Pdf.Text.TextFragmentState.#ctor(Aspose.Pdf.Text.TextFragment)">
@@ -30688,7 +31679,7 @@
       <remarks>
              HorizontalAlignment.None is equal to HorizontalAlignment.Left.
             
-             Note that TextFragmentState.VerticalAlignment property works in new document deneration generation scenarios only.
+             Note that TextFragmentState.VerticalAlignment property works in new document generation scenarios only.
              </remarks>
     </member>
     <member name="T:Aspose.Pdf.Text.TextOptions.TextEditOptions">
@@ -30784,6 +31775,11 @@
             Represent pdf content as is, i.e. without formatting.
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.Text.TextOptions.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Text.TextOptions</b> namespace provides classes that allow to alternate behavior of text extraction and manipulation functionality.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Text.TextOptions.TextReplaceOptions">
       <summary>
             Represents text replace options
@@ -30795,15 +31791,27 @@
             </summary>
       <param name="scope">Scope object.</param>
     </member>
+    <member name="M:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.#ctor(Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustment)">
+      <summary>
+            Initializes new instance of the <see cref="T:Aspose.Pdf.Text.TextOptions.TextReplaceOptions" /> object for the specified after replace action.
+            </summary>
+      <param name="adjustment">ReplaceAdjustment object.</param>
+    </member>
     <member name="P:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceScope">
       <summary>
             Gets or sets a scope where replace text operation is applied 
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustmentAction">
+      <summary>
+            Gets or sets an action that will be done after replace of text fragment to more short.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.Scope">
       <summary>
             Scope where replace text operation is applied 
             REPLACE_FIRST by default
+            This obsolete option was kept for compatibility. It affects to PdfContentEditor and has no effect to TextFragmentAbsorber.
             </summary>
     </member>
     <member name="F:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.Scope.REPLACE_FIRST">
@@ -30814,6 +31822,30 @@
     <member name="F:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.Scope.REPLACE_ALL">
       <summary>
             Replace all text occurrences on all affected pages
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustment">
+      <summary>
+            Determines action that will be done after replace of text fragment to more short.
+            None - no action, length of the line may be changed;
+            AdjustSpaceWidth - tries adjust spaces between words to keep line length;
+            WholeWordsHyphenation - tries distribute words between paragraph lines to keep paragraph's right field;
+            Default value is None;
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustment.None">
+      <summary>
+            No action, length of the line may be changed
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustment.AdjustSpaceWidth">
+      <summary>
+            Tries adjust spaces between words to keep line length
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.Text.TextOptions.TextReplaceOptions.ReplaceAdjustment.WholeWordsHyphenation">
+      <summary>
+            Tries distribute words between paragraph lines to keep paragraph's right field
             </summary>
     </member>
     <member name="T:Aspose.Pdf.Text.TextOptions.TextSearchOptions">
@@ -31799,16 +32831,16 @@
                 switch (eventInfo.EventType)
                 {
                     case HtmlSaveOptions.ProgressEventType.TotalProgress:
-                        Console.WriteLine(String.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.SourcePageAnalized:
-                        Console.WriteLine(String.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.ResultPageCreated:
-                        Console.WriteLine(String.Format("{0}  - Result page's {1} of {2} layout created.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Result page's {1} of {2} layout created.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     case HtmlSaveOptions.ProgressEventType.ResultPageSaved:
-                        Console.WriteLine(String.Format("{0}  - Result page {1} of {2} exported.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
+                        Console.WriteLine(string.Format("{0}  - Result page {1} of {2} exported.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                         break;
                     default:
                         break;
@@ -31949,7 +32981,7 @@
     </member>
     <member name="F:Aspose.Pdf.InteractiveFeatures.ExplicitDestinationType.XYZ">
       <summary>
-            Display the page with the coordinates (left, top) positioned at the upper-left corner of the window
+            Display the page with the coordinates (left,top) positioned at the upper-left corner of the window
             and the contents of the page magnified by the factor zoom. A null value for any of the parameters
             left, top, or zoom specifies that the current value of that parameter is to be retained unchanged. 
             A zoom value of 0 has the same meaning as a null value.
@@ -32173,6 +33205,13 @@
             Creates load options for converting html into pdf document with empty base path.
             </summary>
     </member>
+    <member name="F:Aspose.Pdf.HtmlLoadOptions.ExternalResourcesCredentials">
+      <summary>
+             If loading of external data referenced in HTML 
+             requirs credentials, You can put them into this parameter - they will be used
+             during loading of external resources
+            </summary>
+    </member>
     <member name="M:Aspose.Pdf.HtmlLoadOptions.#ctor(System.String)">
       <summary>
             Creates load options for converting html into pdf document with defined base path.
@@ -32189,6 +33228,11 @@
              into special method should be used, and delegate that refers that method should be assygned to this attribute.
               Attention! Please note that this feature allowed only when UseNewConversionEngine set to 'true'.
              Otherwise runtime exception will be thrown! 
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.HtmlLoadOptions.InputEncoding">
+      <summary>
+            Gets or sets the attribute specifying the encoding used for this document at the time of the parsing. If this attribute is null the encoding will determine from document character set atribute.
             </summary>
     </member>
     <member name="P:Aspose.Pdf.HtmlLoadOptions.BasePath">
@@ -32386,6 +33430,12 @@
             none of the passwords was defined or supplied password was incorrect. So it impossible to deduce the type of the password.
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.Structure.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Structure</b> namespace provides classes which help to work with a logical structure of a document which presents 
+            the organization of the document into chapters and sections or the identification of special elements such as figures, tables, and footnotes.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Structure.Element">
       <summary>
             Class representing base element of logical structure.
@@ -32455,7 +33505,28 @@
     </member>
     <member name="T:Aspose.Pdf.PclLoadOptions">
       <summary>
-            Represents options for loading/importing PCL file into pdf document.
+            Represents options for loading(import) PCL file into pdf document.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.PclLoadOptions.ConversionEngine">
+      <summary>
+            Defines conversion engine that will be used for conversion
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.PclLoadOptions.ConversionEngines">
+      <summary>
+            Enumerates conversion engines that can be used for conversion
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.PclLoadOptions.ConversionEngines.LegacyEngine">
+      <summary>
+             Legacy conversion engine is conversion engine thay was used for a while and is used by default. 
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.PclLoadOptions.ConversionEngines.NewEngine">
+      <summary>
+             New conversion engine is currently in A-testing state. We open it into public API to get some feedback. 
+             It's currently recommended to use it only when old conversion engine cannot convert document for some reasons.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.SvgLoadOptions">
@@ -32463,9 +33534,37 @@
             Represents options for loading/importing SVG file into pdf document.
             </summary>
     </member>
+    <member name="F:Aspose.Pdf.SvgLoadOptions.ConversionEngine">
+      <summary>
+            Allows select conversion engine that will be in use during conversion.
+            Currently new engine is in B-testing stage, so this value by default set to 
+            ConversionEngines.LegacyEngine
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.SvgLoadOptions.PageInfo">
+      <summary>
+            Gets or sets page info that should be applied during loading of document.
+            NOTE that this parameter only works when ConversionEngine == ConversionEngines.NewEngine
+            </summary>
+    </member>
     <member name="P:Aspose.Pdf.SvgLoadOptions.AdjustPageSize">
       <summary>
             Adust pdf page size to svg size
+            </summary>
+    </member>
+    <member name="T:Aspose.Pdf.SvgLoadOptions.ConversionEngines">
+      <summary>
+            Enumerates conversion engines that can be used for conversion
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.SvgLoadOptions.ConversionEngines.LegacyEngine">
+      <summary>
+            Represents legacy SVG to PDF conversion engine.
+            </summary>
+    </member>
+    <member name="F:Aspose.Pdf.SvgLoadOptions.ConversionEngines.NewEngine">
+      <summary>
+            Represents new SVG to PDF conversion engine.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.Collection">
@@ -32549,6 +33648,11 @@
       <summary>
              This property will be available during migration to new XSL-FO engine.
              If this property is true, the previous version of XSL-FO engine will be used.
+            </summary>
+    </member>
+    <member name="P:Aspose.Pdf.XslFoLoadOptions.BasePath">
+      <summary>
+            The base path/url from which are searched relative pathes to external resources (if any) referenced in loaded SVG file.
             </summary>
     </member>
     <member name="T:Aspose.Pdf.LaTeXSaveOptions">
@@ -32901,6 +34005,11 @@
             Gets or sets the table is broken - will be truncated for next page.
             </summary>
     </member>
+    <member name="P:Aspose.Pdf.Table.ColumnAdjustment">
+      <summary>
+            Gets or sets the table column adjustment.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Watermark">
       <summary>
             Represents a watermark of the page.
@@ -32908,14 +34017,14 @@
     </member>
     <member name="M:Aspose.Pdf.Watermark.#ctor(System.Drawing.Image,Aspose.Pdf.Rectangle)">
       <summary>
-            Initializes a watermark structure with an image and it's position on a page.
+            Initializes a watermark object with an image and it's position on a page.
             </summary>
       <param name="image">Image of the watermark. </param>
       <param name="rect">Position of the watermark on the page.</param>
     </member>
     <member name="M:Aspose.Pdf.Watermark.#ctor(System.Drawing.Image)">
       <summary>
-            Initializes a watermark structure with an image.
+            Initializes a watermark object with an image.
             </summary>
       <param name="image">Image of the watermark.</param>
     </member>
@@ -32934,22 +34043,28 @@
             Gets a flag the watermark is present.
             </summary>
     </member>
+    <member name="T:Aspose.Pdf.Facades.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Pdf.Facades</b> namespace provides classes originaly came from Aspose.Pdf.Kit. These classes are used for manipulating documents
+            perfoming operations like concatenating, stamping, signing, annotating etc. but on the high level without access to a document's inner structure.
+            </summary>
+    </member>
     <member name="T:Aspose.Pdf.Artifact">
       <summary>
             Class represetns PDF Artifact object.
             </summary>
     </member>
-    <member name="F:Aspose.Pdf.Artifact._leftMargin">
+    <member name="F:Aspose.Pdf.Artifact.leftMargin">
       <summary>
             Left margin of artifact.
             </summary>
     </member>
-    <member name="F:Aspose.Pdf.Artifact._rightMargin">
+    <member name="F:Aspose.Pdf.Artifact.rightMargin">
       <summary>
             Right margin of artifact.
             </summary>
     </member>
-    <member name="F:Aspose.Pdf.Artifact._verticalAlignment">
+    <member name="F:Aspose.Pdf.Artifact.VerticalAlignment">
       <summary>
             Vertical alignment of artifact.
             </summary>
@@ -33501,5 +34616,6 @@
             but unfortunately many EPUB readeres don't support xhtml with fixed layout
             </summary>
     </member>
+    <!-- Badly formed XML comment ignored for member "T:Aspose.Pdf.MhtSaveOptions" -->
   </members>
 </doc>
