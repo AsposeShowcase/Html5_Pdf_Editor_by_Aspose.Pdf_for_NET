@@ -1,4 +1,4 @@
-## HTML5 PDF Editor by Aspose for .NET v2.1.0
+## HTML5 PDF Editor by Aspose for .NET v2.2.0
 
 ### Introduction
 
@@ -8,7 +8,18 @@ This is a new and improved PDF Editor application developed in HTML5, jQuery Aja
 
 Portable Document Format (PDF) is one of the most commonly used file formats today. We come across a requirement quite often to edit a PDF files. [Aspose.Pdf for .NET API](http://goo.gl/opbcfA) provides comprehensive features to perform creation, manipulation and conversion of PDF files. 
 
-Following are some of the features we have implemented in HTML5 PDF Editor and more features will be implemented soon:
+Newly Supported Features in v2.2.0
+
+This new release of HTML5 PDF Editor now supports the following important features:
+
+    * Loading PDF files with form fields
+    * Fill Form fields using the Editor
+    * Save and Export the updated PDF file with form fields data
+    * Load Attachments from input PDF file
+    * Download the Attachment file
+    * Remove the Attachment file 
+
+Following are some of the features we have already implemented in HTML5 PDF Editor's previous releases and more features will be implemented soon:
 
     * Loading and Viewing PDF files
     * Loading PDF and Image files from Dropbox
@@ -26,7 +37,7 @@ Following are some of the features we have implemented in HTML5 PDF Editor and m
 
 You can easily use the attached sample application to perform editing on your PDF documents. You can download the application and start using it to edit your PDF files. In the sample application, we are loading PDF files, converting them to image and viewing them in our application using HTML5 Canvas control. We have kept the UI of the application simple so it is easy to understand the implementation of the features. 
 
-![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/130285/1/first.png)
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132061/1/main.png)
 
 Let's see how we can use different features of the PDF editor.
 
@@ -43,6 +54,37 @@ We will choose the file from Dropbox by clicking the menu item 'Dropbox' and a p
 Below image shows the file loaded into the viewer:
 
 ![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/130293/1/loaded_file.png)
+
+### Load and Fill Form Fields in PDF File
+
+We can load a PDF file with form fields in the similar fashion as we have described above. Currently, we support the following form fields:
+
+    * Textbox
+    * Checkbox
+    * ComboBox
+    * Radio Buttons 
+
+After loading a PDF file with form fields, all the form fields are loaded in the editor as shown below:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132063/1/field_open.png)
+
+Once the file with form fields is loaded, you can fill the form using the PDF Editor. Following is the screenshot of filled form:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132075/1/filled_form2.png)
+
+The updated file with updated form fields can be saved using the Save button and following is the screenshot output PDF file:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132087/1/pdf_export.png)
+
+### Managing Attachments in PDF file
+
+HTML5 PDF Editor now supports managing the PDF file attachments. Using the Attachments button, we can open the list of the Attachments in our PDF file as shown below:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132088/1/attachments_loaded.png)
+
+Once the attachments are loaded, we can download the attachments from the PDF file using the Download button. We can remove an attachment from PDF file using the Remove button. This will remove the attachment from the list as shown below:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132090/1/attachment_removed2.png)
 
 ### Search Text in PDF File
 
@@ -186,3 +228,9 @@ You can download the sample application and try it at your end.  The complete so
 
 ### Note: 
 I am using a free trial license of Aspose.Pdf for .NET in the application which removes any trial limitations of Aspose.Pdf API. You can also get a [free trial license](http://goo.gl/AxGy9H) to further explore the features of Aspose.Pdf API as per your requirement. In case no license file is used, the application will work in evaluation mode and will have some restrictions. So, it is recommended to have a free trial license (without any credit card information requirement or any payment).
+
+In evaluation version (without the use of a free trial license or paid subscription of Aspose.Pdf for .NET) only 4 items from any of the collections will be loaded in the editor. Following warning message will be shown in such case:
+
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/132105/1/license.png)
+
+In such case, please get a free trial license to test the HTML5 PDF Editor without any evaluation restrictions as mentioned above.
