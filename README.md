@@ -1,4 +1,4 @@
-## HTML5 PDF Editor by Aspose for .NET v2.3.0
+## HTML5 PDF Editor by Aspose.PDf for .NET v2.3.0
 
 ### Introduction
 
