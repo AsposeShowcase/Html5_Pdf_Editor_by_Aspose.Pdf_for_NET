@@ -5,9 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--<div id="Image1" style="z-index: -10; width:1138px; height:760px;">
-    
-    </div>--%>
 <!-- Modal -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false"  aria-hidden="true">
   <div class="modal-dialog">
@@ -96,10 +93,10 @@
       <table class="table table-bordered" id="tblAttach">
   <thead>
   <tr>
-  <td>File Name</td>
-  <td>File Description</td>
-  <td>Download File</td>
-  <td>Remove File</td>
+  <th>File Name</th>
+  <th>File Description</th>
+  <th>Download File</th>
+  <th>Remove File</th>
   </tr>
   </thead>
 </table>
@@ -110,48 +107,56 @@
   </div>
 </div>     
 
+<div id='divSignature' class="panel panel-success" style='position:absolute;z-index:1030; visibility:hidden'>
+<div class="modal-header">
+<h4 class="modal-title" id="H4">Signature</h4>
+</div>
+<canvas id="signCanvas" width="350" height="150" style="z-index:1125;" ></canvas>
+ <div class="modal-footer">
+      <button type="button" class="btn btn-default" id="btnClear" onclick="clearSignature();">Clear</button>
+      <button type="button" class="btn btn-default" id="btnSignDone" onclick="saveSignature();">Done</button>
+      <button type="button" class="btn btn-default" id="btnSignClose" onclick="closeSignature();">Close</button>
+      </div>
+</div>
+
+
 <nav class="navbar navbar-inverse" role="navigation">  
   <h3 style="color:White; text-align:center">HTML5 PDF Editor by Aspose for .NET</h3>
 </nav>
 <div class="well well-sm">
-   <%-- <button class="open-myModal btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-id="uploading" data-placement="top" title="Upload File to Server">
-      <span class=" glyphicon glyphicon-upload"></span>
-    </button>--%>
 
     <!-- Single button -->
 <div class="btn-group">
-  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="generalSetup('Upload');">
+
+  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
     <span class=" glyphicon glyphicon-upload"></span>
   </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a class="open-myModal" data-toggle="modal" data-target="#myModal" data-id="uploading" data-placement="top" title="Upload File to Server"> From Computer</a></li>
-    <li><a onclick="javascript:onDropboxChooserClicked('upload')"> From Dropbox</a></li>    
-  </ul>
+<ul class="dropdown-menu">  
+  <li><a onclick="javascript:onNewFileClicked('upload')"> Create New File</a></li>
+  <li><a class="open-myModal" data-toggle="modal" data-target="#myModal" data-id="uploading" data-placement="top" title="Upload File to Server">Open From Computer</a></li>
+  <li><a onclick="javascript:onDropboxChooserClicked('upload')">Open From Dropbox</a></li>
+  </ul>   
 </div>
 
-    <button onclick="javascript:generalSetup('Add');AddPage();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnAddPage" data-toggle="tooltip" data-placement="top" title="Add Page">
+    <button onclick="javascript:generalSetup('Add');AddPage();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnAddPage" data-toggle="tooltip" data-placement="top" title="Add Page" disabled=disabled>
     <span class="glyphicon glyphicon-plus"></span>
     </button>
-     <button onclick="javascript:generalSetup('Delete');DeletePage();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnDeletePage" data-toggle="tooltip" data-placement="top" title="Delete Page">
+     <button onclick="javascript:generalSetup('Delete');DeletePage();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnDeletePage" data-toggle="tooltip" data-placement="top" title="Delete Page" disabled=disabled>
     <span class="glyphicon glyphicon-minus"></span>
     </button>
-    <button class="open-moveModal btn btn-default btn-lg" data-toggle="modal" onclick="generalSetup('Move');" data-target="#moveModal" data-toggle="tooltip" data-id="moving" data-placement="top" title="Move Page">    
+    <button class="open-moveModal btn btn-default btn-lg" data-toggle="modal" onclick="generalSetup('Move');" data-target="#moveModal" data-toggle="tooltip" id="btnMoving" data-id="moving" data-placement="top" title="Move Page" disabled=disabled>    
     <span class="glyphicon glyphicon-transfer"></span> 
     </button>
 
-     <button class="open-myModal btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" onclick="generalSetup('Append');" data-id="appending" data-placement="top" title="Append File">
+     <button class="open-myModal btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" onclick="generalSetup('Append');" data-id="appending" id="btnAppending" data-placement="top" title="Append File" disabled=disabled>
      <span class="glyphicon glyphicon-plus-sign"></span>    
     </button>
 
-    <button onclick="javascript:generalSetup('Save');UploadPic();return false;" class="btn btn-default btn-lg" id="btnSave" data-toggle="tooltip" data-placement="top" title="Save Pdf File">
+    <button onclick="javascript:generalSetup('Save');UploadPic();return false;" class="btn btn-default btn-lg" id="btnSave" data-toggle="tooltip"  data-placement="top" title="Save Pdf File" disabled=disabled>
     <span class="glyphicon glyphicon-floppy-disk"></span>
     </button>
-    <%--<button runat="server" onclick="javascript:SaveToDisk();return false;"  id="btnExport" class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Export Pdf File">
-    <span class="glyphicon glyphicon-export"></span>
-    </button>--%>
-
     <div class="btn-group">
-  <button type="button" class="btn btn-default btn-lg" data-placement="top" title="Export File" data-toggle="dropdown" onclick="generalSetup('Export');" aria-expanded="false">
+  <button type="button" class="btn btn-default btn-lg" data-placement="top" title="Export File" data-toggle="dropdown" onclick="generalSetup('Export');" id="btnExporting" aria-expanded="false" disabled=disabled>
     <span class=" glyphicon glyphicon-export"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
@@ -165,21 +170,17 @@
   </ul>
 </div>
 
-    <%--<button runat="server" onclick="javascript:SaveText();return false;" type="submit" id="btnTextExport" class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Export as Text File">
-    <span class="glyphicon glyphicon-save"></span>
-    </button>--%>
-
-    <button onclick="javascript:generalSetup('Previous');Previous();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Previous Page">
+    <button onclick="javascript:generalSetup('Previous');Previous();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" data-toggle="tooltip" id="btnPrevious" data-placement="top" title="Previous Page" disabled=disabled>
     <span class="glyphicon glyphicon-circle-arrow-left"></span> 
     </button>
      <button  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" id="lblPages">Page 0 Of 0</button>
-    <button onclick="javascript:generalSetup('Next');Next();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Next Page">
+    <button onclick="javascript:generalSetup('Next');Next();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnNext" data-toggle="tooltip" data-placement="top" title="Next Page" disabled=disabled>
      <span class="glyphicon glyphicon-circle-arrow-right"></span>    
     </button>
 
 
     <div class="btn-group">
-  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="generalSetup('Search');">
+  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="generalSetup('Search');" id="btnSearching" disabled=disabled>
     <span class=" glyphicon glyphicon-search"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
@@ -188,10 +189,8 @@
     <li><a onclick="javascript:ClearSearchClicked()"> Clear Search</a></li>    
   </ul>
 </div>
-
-
     <div class="btn-group">
-  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="generalSetup('Image');">
+  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="generalSetup('Image');" id="btnImage" disabled=disabled>
     <span class="glyphicon glyphicon-picture"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
@@ -201,31 +200,43 @@
 </div>
       
     <div class="btn-group">
-    <button id="btnRect" value="rect"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Highlight Mode" onclick="generalSetup('Rect');">
+    <button id="btnRect" value="rect"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Highlight Mode" onclick="generalSetup('Rect');" disabled=disabled>
      <span class="glyphicon glyphicon-header"></span>  
     </button>
 
-     <button id="btnRead" value="reading"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Read Mode" onclick="generalSetup('Read');">
+     <button id="btnRead" value="reading"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Read Mode" onclick="generalSetup('Read');" disabled=disabled>
      <span class="glyphicon glyphicon-hand-up"></span>  
     </button>
 
-     <button id="btnDrag" value="dragging"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Drag Mode" onclick="generalSetup('Drag');">
+     <button id="btnDrag" value="dragging"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Drag Mode" onclick="generalSetup('Drag');" disabled=disabled>
      <span class="glyphicon glyphicon-move"></span>  
     </button>
 
-     <button id="btnTexting" value="texting"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Text Mode" onclick="generalSetup('Text');"> 
+     <button id="btnTexting" value="texting"  class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" title="Text Mode" onclick="generalSetup('Text');" disabled=disabled> 
      <span class="glyphicon glyphicon-text-height"></span>  
     </button>
     </div>
-     <button id="btnAttachments" value="attachment"  class="btn btn-default btn-lg" data-toggle="modal" data-target="#divAttach" data-placement="top" title="Attachments" onclick="generalSetup('Attach');"> 
+      <div class="btn-group">
+     <button id="btnAttachments" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false"  title="Attachments" disabled=disabled> 
      <span class="glyphicon glyphicon-paperclip"></span>  
-</button>
+    </button>
+    <ul class="dropdown-menu">  
+  <li><a class="open-myModal" data-toggle="modal" data-target="#myModal" data-id="addAttachment" data-toggle="modal" data-placement="top" title="Add Attachment" >Add Attachment</a></li>
+  <li><a data-id="attachment" data-toggle="modal" data-target="#divAttach" data-placement="top" title="View Attachments" onclick="generalSetup('Attach');">View Attachments</a></li>
+  </ul>   
+    
+
+    <button id="btnSignature" value="signature"  class="btn btn-default btn-lg" data-toggle="tooltip"  data-placement="top" title="Signature" onclick="generalSetup('signature');" disabled=disabled> 
+     <span class="glyphicon glyphicon-pencil"></span>  
+    </button>
+
+    </div>
 </div>
 
 
 
     <div id="container">
-       <canvas id="imageView" width="1138" height="760" style="z-index:5" >
+       <canvas id="imageView" width="1138" height="760" style="z-index:5; background-color:GrayText;" >
       
         <p>Unfortunately, your browser is currently unsupported by our web
         application.  We are sorry for the inconvenience. Please use one of the
@@ -317,10 +328,6 @@
        <span class="glyphicon glyphicon-remove-sign"></span>
         </button>
        </div>
-  <script type="text/javascript" src="example-5.js">
+  <script type="text/javascript" src="Editor.js">
   </script>
-  <iframe id='manifest_iframe_hack' 
-  style='display: none;' 
-  src='temporary_manifest_hack.html'>
-</iframe> 
 </asp:Content>

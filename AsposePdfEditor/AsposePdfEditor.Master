@@ -14,9 +14,10 @@
       .info {position: absolute;background-color: White;border-style:none; resize: none;  vertical-align:top; text-align:center;}
       .tbox {position: absolute;background-color:white;border-style:none; resize: none; }
       .Mine {position: absolute;background-color: white;border-style: none; resize:none;  vertical-align:top; text-align:center;}
-
-   
-
+      .modal-admin {
+  width: 400px;
+  margin-left: 100px;
+}
 input[type=radio] { 
 
 }

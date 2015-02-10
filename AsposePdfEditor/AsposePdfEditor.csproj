@@ -70,11 +70,10 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="CanvasSave.aspx" />
-    <Content Include="example-5.js" />
+    <Content Include="Editor.js" />
     <Content Include="framely.gif" />
     <Content Include="Default.aspx" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
-    <Content Include="temporary_manifest_hack.html" />
     <Content Include="Test.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -110,6 +109,7 @@
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="License\Aspose.Total.lic" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,9 +120,8 @@
   <ItemGroup>
     <Folder Include="Attachments\" />
     <Folder Include="Convert\" />
-    <Folder Include="Images\" />
+    <Folder Include="Images\Signature\" />
     <Folder Include="Input\" />
-    <Folder Include="License\" />
     <Folder Include="obj\" />
     <Folder Include="search\" />
   </ItemGroup>
