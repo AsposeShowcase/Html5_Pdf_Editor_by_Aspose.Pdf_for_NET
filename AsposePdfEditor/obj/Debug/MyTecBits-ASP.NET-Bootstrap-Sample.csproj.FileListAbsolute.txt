@@ -1,5 +1,0 @@
-C:\Beaulin_Personal\Dahlia\MyTecBits\MyTecBits-ASP.NET-Bootstrap-Sample\MyTecBits-ASP.NET-Bootstrap-Sample\bin\MyTecBits-ASP.NET-Bootstrap-Sample.dll
-C:\Beaulin_Personal\Dahlia\MyTecBits\MyTecBits-ASP.NET-Bootstrap-Sample\MyTecBits-ASP.NET-Bootstrap-Sample\bin\MyTecBits-ASP.NET-Bootstrap-Sample.pdb
-C:\Beaulin_Personal\Dahlia\MyTecBits\MyTecBits-ASP.NET-Bootstrap-Sample\MyTecBits-ASP.NET-Bootstrap-Sample\obj\Debug\MyTecBits-ASP.NET-Bootstrap-Sample.dll
-C:\Beaulin_Personal\Dahlia\MyTecBits\MyTecBits-ASP.NET-Bootstrap-Sample\MyTecBits-ASP.NET-Bootstrap-Sample\obj\Debug\MyTecBits-ASP.NET-Bootstrap-Sample.pdb
-C:\Beaulin_Personal\Dahlia\MyTecBits\MyTecBits-ASP.NET-Bootstrap-Sample\MyTecBits-ASP.NET-Bootstrap-Sample\obj\Debug\MyTecBits-ASP.NET-Bootstrap-Sample.csprojResolveAssemblyReference.cache
