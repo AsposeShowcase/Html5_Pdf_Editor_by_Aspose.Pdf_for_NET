@@ -109,7 +109,6 @@
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="License\Aspose.Total.lic" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,6 +121,7 @@
     <Folder Include="Convert\" />
     <Folder Include="Images\Signature\" />
     <Folder Include="Input\" />
+    <Folder Include="License\" />
     <Folder Include="obj\" />
     <Folder Include="search\" />
   </ItemGroup>
