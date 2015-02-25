@@ -259,21 +259,21 @@ You can also edit the text by clicking the inserted text in the 'Text Mode'. It 
 
 After performing the changes and pressing 'OK' button, the updated text will be shown. We have changed some text and the color of the text and the updated text is shown below:
 
-(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/130323/1/edit_text_result.png)
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/130323/1/edit_text_result.png)
 
 ### Rotate Inserted Text in PDF File
 
 Now, you can rotate the inserted text after it has been added to the PDF file, for that you need to click on the drag mode and select the text item you want to rotate as shown below:
 
-(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134226/1/select.png)
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134226/1/select.png)
 
 Now, using the marker, you can rotate the text to any angle as per your requirement as shown below:
 
-(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134227/1/rotate.png)
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134227/1/rotate.png)
 
 Once done, you can save and export the PDF file to see the content in your PDF file as shown below:
 
-(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134228/1/saved.png)
+![](https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134228/1/saved.png)
 
 ### Dragging / Positioning / Deleting Inserted Content
 
