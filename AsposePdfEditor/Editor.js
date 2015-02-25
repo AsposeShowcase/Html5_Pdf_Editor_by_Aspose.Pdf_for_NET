@@ -27,6 +27,9 @@ var myTools = "reading";
 var anchorVal = -1;
 var signX = 5;
 var signY = 5;
+var r = 0;
+
+var isDown = false;
 
 // Keep everything in anonymous function, called on window load.
 if (window.addEventListener) {
@@ -144,7 +147,7 @@ if (window.addEventListener) {
                 func(ev);
 
             }
-            
+
         }
 
         // The event handler for any changes made to the tool selector.
@@ -349,23 +352,31 @@ if (window.addEventListener) {
 
                     //find which shape was clicked
                     for (i = 0; i < shapes.length; i++) {
-                        
-                        if (hitTest(shapes[i], mouseX, mouseY)) {
 
-                            if (anchorHitTest(shapes[i], mouseX, mouseY) == -1) {
+                        if (hitTest(shapes[i], mouseX, mouseY, context) || rotateTest(shapes[i], mouseX, mouseY, context)) {
+
+                            if (anchorHitTest(shapes[i], mouseX, mouseY, context) == -1) {
 
 
                                 dragging = true;
                                 anchorVal = -1;
-
+                                isDown = false;
                             }
                             else {
 
-                                if (shapes[i].Itype == 'image')
+                                if (shapes[i].Itype == 'image') {
                                     dragging = false;
+                                    isDown = false;
+                                }
+                                else if (shapes[i].Itype == 'text' && anchorVal == 5) {
+
+                                    dragging = false;
+                                    isDown = true;
+                                }
                                 else {
                                     dragging = true;
                                     anchorVal = -1;
+                                    isDown = false;
                                 }
                             }
                             selectedShape = i;
@@ -379,9 +390,13 @@ if (window.addEventListener) {
                                 var rect = canvas.getBoundingClientRect();
 
 
-                                context.strokeStyle = 'brown';
-                                context.setLineDash([6]);
-                                context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                               if (shapes[dragIndex].Itype != 'text') {
+                                    context.strokeStyle = 'brown';
+                                    context.setLineDash([6]);
+                                    context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                                }
+
+
                                 if (shapes[dragIndex].Itype == 'image') {
 
                                     context.fillStyle = 'rgba(255, 230, 81, 1)';
@@ -391,11 +406,24 @@ if (window.addEventListener) {
                                     context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
 
                                 }
+                                else if (shapes[dragIndex].Itype == 'text') {
+                                       drawRotationHandle(shapes[dragIndex], context);
+                                 //   context.fillStyle = "blue";
+                                 //   context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, (shapes[dragIndex].y + shapes[dragIndex].h/2) - 5, 10, 10);
+                                }
                                 mouseX = ev.pageX - canvas.offsetLeft;
                                 mouseY = ev.pageY - canvas.offsetTop;
+
+
+
                                 $('#divDel').css('visibility', 'visible');
-                                $('#divDel').css('left', rect.left + shapes[dragIndex].x + shapes[dragIndex].w);
+                                // $('#divDel').css('left', rect.left + shapes[dragIndex].x + shapes[dragIndex].w);
+                                $('#divDel').css('left', rect.left + shapes[dragIndex].x - 50);
                                 $('#divDel').css('top', rect.top + shapes[dragIndex].y);
+                                //                                var isDown = context.isPointInPath(mouseX, mouseY);
+                                //                                if (isDown) {
+                                //                                    alert(isDown);
+                                //                                }
                                 break;
                             }
                         }
@@ -451,9 +479,15 @@ if (window.addEventListener) {
 
                     DrawShapes();
 
-                    context.strokeStyle = 'brown';
-                    context.setLineDash([6]);
-                    context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                    mouseX = evt.pageX - canvas.offsetLeft;
+                    mouseY = evt.pageY - canvas.offsetTop;
+
+
+                    if (shapes[dragIndex].Itype != 'text') {
+                        context.strokeStyle = 'brown';
+                        context.setLineDash([6]);
+                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                    }
                     if (shapes[dragIndex].Itype == 'image') {
 
                         context.fillStyle = 'rgba(255, 230, 81, 1)';
@@ -463,14 +497,48 @@ if (window.addEventListener) {
                         context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
 
                     }
+                    else if (shapes[dragIndex].Itype == 'text') {
 
-                    mouseX = evt.pageX - canvas.offsetLeft;
-                    mouseY = evt.pageY - canvas.offsetTop;
+                        drawRotationHandle(shapes[dragIndex], context);
+
+                    }
+
 
                     $('#divDel').css('visibility', 'hidden');
 
                 }
 
+                else if (isDown) {
+                    var posX;
+                    var posY;
+                    //getting mouse position correctly 
+                    var bRect = canvas.getBoundingClientRect();
+                    mouseX = (evt.clientX - bRect.left) * (canvas.width / bRect.width);
+                    mouseY = (evt.clientY - bRect.top) * (canvas.height / bRect.height);
+
+                    //clamp x and y positions to prevent object from dragging outside of canvas
+                    posX = mouseX - dragHoldX; // -(canvas.width / 2);
+                    // alert(mouseX);
+
+                    posY = mouseY - dragHoldY; // -(canvas.height / 2);
+
+                    
+
+                    var dx = mouseX - shapes[dragIndex].x + (shapes[dragIndex].w) / 2;
+                    var dy = mouseY - shapes[dragIndex].y + (shapes[dragIndex].h) / 2;
+                    var angle = Math.atan2(dy, dx);
+                    r = angle;
+
+                    shapes[dragIndex].fieldType = r;
+
+                    
+                    drawScreen();
+
+                    DrawShapes();
+
+                    drawRotationHandle(shapes[dragIndex], context);
+
+                }
                 else {
 
 
@@ -530,9 +598,16 @@ if (window.addEventListener) {
 
                     DrawShapes();
 
-                    context.strokeStyle = 'brown';
-                    context.setLineDash([6]);
-                    context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                    if (shapes[dragIndex].Itype != 'text') {
+                        context.strokeStyle = 'brown';
+                        context.setLineDash([6]);
+                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                    }
+                    else if (shapes[dragIndex].Itype == 'text') {
+
+                        drawRotationHandle(shapes[dragIndex], context);
+                    
+                    }
                     if (shapes[dragIndex].Itype == 'image') {
 
                         context.fillStyle = 'rgba(255, 230, 81, 1)';
@@ -557,14 +632,16 @@ if (window.addEventListener) {
                 if (tool.started) {
                     tool.started = false;
                 }
-
+                isDown = false;
                 if (dragging) {
                     var rect = canvas.getBoundingClientRect();
                     $('#divDel').css('visibility', 'visible');
-                    $('#divDel').css('left', rect.left + shapes[dragIndex].x + shapes[dragIndex].w);
+                    //$('#divDel').css('left', rect.left + shapes[dragIndex].x + shapes[dragIndex].w);
+                    $('#divDel').css('left', rect.left + shapes[dragIndex].x - 50);
                     $('#divDel').css('top', rect.top + shapes[dragIndex].y);
 
                     dragging = false;
+                    
 
                 }
             };
@@ -594,7 +671,7 @@ if (window.addEventListener) {
                     for (i = 0; i < shapes.length; i++) {
                         if (shapes[i].t != "") {
 
-                            if (hitTest(shapes[i], textX, textY)) {
+                            if (hitTest(shapes[i], textX, textY, context)) {
                                 editText = i;
                                 $('#textareaTest').val(shapes[i].t);
                                 break;
@@ -673,14 +750,13 @@ function saveTextFromArea() {
     $('#textAreaPopUp').css('visibility', 'hidden');
 
     if (text != "") {
-        
 
+        r = 0;
         var canvas = document.getElementById('imageView');
         var ctx = canvas.getContext('2d');
 
         if (editText == -1) {
             //set the font styles
-
             ctx.fillStyle = fontColor;
 
             //draw the text
@@ -688,8 +764,9 @@ function saveTextFromArea() {
 
             ctx.fillText(text, textX, textY + parseInt(fontSize));
 
-            tempShape = { x: textX, y: textY, w: ctx.measureText(text).width, h: parseInt(fontSize), p: currentPage, f: Npages[currentPage - 1], t: text, n: fontText, s: fontSize, c: fontColor, wt: fontWieght, st: fontStyle, ratio: aRatio[currentPage - 1], imfile: "", imName: "", Itype: "text", fieldType:"" };
+            tempShape = { x: textX, y: textY, w: ctx.measureText(text).width, h: parseInt(fontSize), p: currentPage, f: Npages[currentPage - 1], t: text, n: fontText, s: fontSize, c: fontColor, wt: fontWieght, st: fontStyle, ratio: aRatio[currentPage - 1], imfile: "", imName: "", Itype: "text", fieldType: r };
             shapes.push(tempShape);
+
         }
         else {
 
@@ -1147,6 +1224,12 @@ function DrawShapes() {
             }
             if (shapes[i].Itype== "text") {
 
+               
+                context.save();
+                context.translate(shapes[i].x, shapes[i].y + parseInt(shapes[i].s));
+
+                context.rotate(shapes[i].fieldType);
+
                 //set the font styles
                 var font = shapes[i].n;
                 var fontsize = shapes[i].s;
@@ -1157,8 +1240,9 @@ function DrawShapes() {
                 //draw the text
                 context.font = fontstyle + " " + fontweight + " " + fontsize + "px " + font;
 
-                context.fillText(shapes[i].t, shapes[i].x, shapes[i].y + parseInt(fontsize));
+                context.fillText(shapes[i].t, 0,0);
 
+                context.restore();
             }
 
         }
@@ -1290,50 +1374,132 @@ function fileSelected() {
     xhr.send(fd);
 }
 
-function anchorHitTest(shape,x, y) {
+function anchorHitTest(shape,x, y, context) {
 
     var dx, dy;
 
-    if (x > shape.x && x < (shape.x + 10) && y < (shape.y + 10) && y > shape.y) {
+    anchorVal = -1;
+
+    if (x > shape.x && x < (shape.x + 10) && y < (shape.y + 10) && y > shape.y && shape.Itype == 'image') {
 
         anchorVal = 0;
         return anchorVal;
     }
-    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y < (shape.y + 10) && y > shape.y) {
+    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y < (shape.y + 10) && y > shape.y && shape.Itype == 'image') {
 
         anchorVal = 1;
+
         return anchorVal;
     }
-    else if (x > shape.x && x < (shape.x + 10) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h)) {
+    else if (x > shape.x && x < (shape.x + 10) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h) && shape.Itype == 'image') {
 
         anchorVal = 2;
         return anchorVal;
     }
-    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h)) {
+    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h) && shape.Itype == 'image') {
         anchorVal = 3;
         return anchorVal;
+    }
+
+    else if (x > (shape.x + shape.w - 5) && x < (shape.x + shape.w + 5) && y < (shape.y + (shape.h / 2) + 10) && y > (shape.y + (shape.h / 2) - 10) && shape.Itype == 'text') {
+
+        anchorVal = 5;
+
+        return anchorVal;
+    }
+    else if (shape.Itype == 'text') {
+
+        context.save();
+
+        context.translate(shape.x, shape.y + parseInt(shape.s));
+        context.rotate(shape.fieldType);
+
+        context.beginPath();
+        context.rect(shape.w - 5, (shape.h / -2) - 5, 10, 10);
+
+        var result = context.isPointInPath(x, y);
+
+        context.restore();
+        if (result) {
+
+            anchorVal = 5;
+        }
+        return anchorVal;
+
     }
     else { return -1; }
 
 }
 
-function hitTest(shape, mx, my) {
+function hitTest(shape, mx, my, context) {
 
-if(mx>shape.x&&mx<shape.x + shape.w)
-{
-    if (my > shape.y && my < shape.y + shape.h) {
-        return true;
+    if (shape.Itype == 'text') {
+
+        context.save();
+        
+        context.translate(shape.x, shape.y + parseInt(shape.s));
+        context.rotate(shape.fieldType);
+                
+        context.beginPath();
+        context.rect(0, -shape.h, shape.w+5, shape.h);
+
+        var result = context.isPointInPath(mx, my);
+
+        context.restore();
+
+        return result;
     }
+
+    //if (shape.Itype != 'text') {
+        if (mx > shape.x && mx < shape.x + shape.w) {
+            if (my > shape.y && my < shape.y + shape.h) {
+                return true;
+            }
+            else {
+
+                return false;
+            }
+        }
+   // }
+//    else if (shape.Itype == 'text') {
+
+//        context.save();
+//        context.translate(shape.x + (shape.w / 2), shape.y + (shape.h / 2));
+//        context.rotate(shape.fieldType);
+
+//     //   context.fillStyle = 'green';
+//     //   context.fillRect(mx - (shape.x + shape.w), my - (shape.y + shape.h), shape.w, shape.h);
+
+//        if (mx > shape.x && mx < shape.x + shape.w) {
+//            if (my > shape.y && my < shape.y + shape.h) {
+//                context.restore();
+//                return true;
+//            }
+//            else {
+//                context.restore();
+//                return false;
+//            }
+//        }
+//    }
     else {
 
         return false;
     }
+
 }
-else {
+
+function rotateTest(shape, mx, my, context) {
+
+    
+//    if (shape.Itype == 'text') {
+
+//        drawRotationHandle(shape,context);
+//        anchorVal = 5;
+//    }
+//    
+//    var down = context.isPointInPath(mx, my);
 
     return false;
-}
-
 }
 
 function SaveToDisk() {
@@ -1469,7 +1635,7 @@ function makeBold() {
     if ($('#btnBold').hasClass('active')) {
 
         $('#textareaTest').css('font-weight', 'normal');
-        fontWieght = "";
+        fontWieght = "normal";
     }
     else {
         $('#textareaTest').css('font-weight', 'bold');
@@ -2017,3 +2183,22 @@ function onStartup() {
     document.getElementById("btnSignature").disabled = false;
 
 }
+
+function drawRotationHandle(shape, context) {
+
+    context.save();
+    
+    context.translate(shape.x , shape.y + parseInt(shape.s));
+    context.rotate(shape.fieldType);
+
+    context.strokeStyle = 'brown';
+    context.setLineDash([6]);
+    context.strokeRect(0, -shape.h, shape.w, shape.h);
+
+    context.fillStyle = "#7171C6";
+    context.fillRect(shape.w - 5, (shape.h/-2) - 5, 10, 10);
+    
+    context.restore();
+}
+
+

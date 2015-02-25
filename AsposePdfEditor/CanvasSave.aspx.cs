@@ -318,6 +318,7 @@ namespace AsposePdfEditor
                     else if(shapes[i].Itype == "text")
                     {
 
+                        /*
                         // create TextBuilder for first page
                         TextBuilder tb = new TextBuilder(doc.Pages[shapes[i].p]);
 
@@ -343,8 +344,40 @@ namespace AsposePdfEditor
                         // specify the position where TextFragment needs to be placed
                         fragment.Position = new Position((float)(shapeX), (float)(yaxis));
 
+                       // fragment.Rectangle.Rotate((360 - (Convert.ToDouble(shapes[i].fieldType)) * 180 / Math.PI);
+
                         // append TextFragment to PDF file
                         tb.AppendText(fragment);
+                        */
+                        
+                        //create text stamp
+                        TextStamp textStamp = new TextStamp(shapes[i].t);
+                        //set whether stamp is background
+                       // textStamp.Background = true;
+                        //set origin
+                        textStamp.XIndent = (float)(shapeX); 
+                        textStamp.YIndent = (float)(yaxis);
+                        //rotate stamp
+                        textStamp.RotateAngle = 360 - ((Convert.ToDouble(shapes[i].fieldType)) * 180 / Math.PI);
+                        
+                        //set text properties
+                        textStamp.TextState.Font = FontRepository.FindFont(shapes[i].n);
+                        textStamp.TextState.FontSize = Convert.ToInt32(shapes[i].s) * 0.75f;
+
+                        if (shapes[i].wt == "bold")
+                        {
+                            textStamp.TextState.FontStyle = FontStyles.Bold;
+                        }
+
+                        if (shapes[i].st == "italic")
+                        {
+                            textStamp.TextState.FontStyle = FontStyles.Italic;
+                        }
+                        
+                       
+                        textStamp.TextState.ForegroundColor = GetColor(shapes[i].c);
+                        //add stamp to particular page
+                        doc.Pages[shapes[i].p].AddStamp(textStamp);
 
                     }
                     else if (shapes[i].Itype == "field" && isSpecial)

@@ -1,4 +1,4 @@
-## HTML5 PDF Editor by Aspose.Pdf for .NET v2.3.0
+## HTML5 PDF Editor by Aspose.Pdf for .NET v2.3.1
 
 ### Introduction
 
@@ -7,6 +7,12 @@ This is a new and improved PDF Editor application developed in HTML5, jQuery Aja
 #### Note: The project works on Visual Studio 2010 and higher versions.
 
 Portable Document Format (PDF) is one of the most commonly used file formats today. We come across a requirement quite often to edit a PDF files. [Aspose.Pdf for .NET API](http://goo.gl/opbcfA) provides comprehensive features to perform creation, manipulation and conversion of PDF files. 
+
+#### New Feature Request Supported in v2.3.1
+
+As per the feature request from one of our users, we have implemented the following feature and released v2.3.1 of our HTML5 PDF Editor by Aspose.Pdf for .NET:
+
+  * Rotate Inserted Text in PDF file. 
 
 #### Newly Supported Features in v2.3.0
 
@@ -254,6 +260,20 @@ You can also edit the text by clicking the inserted text in the 'Text Mode'. It 
 After performing the changes and pressing 'OK' button, the updated text will be shown. We have changed some text and the color of the text and the updated text is shown below:
 
 (https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/130323/1/edit_text_result.png)
+
+### Rotate Inserted Text in PDF File
+
+Now, you can rotate the inserted text after it has been added to the PDF file, for that you need to click on the drag mode and select the text item you want to rotate as shown below:
+
+(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134226/1/select.png)
+
+Now, using the marker, you can rotate the text to any angle as per your requirement as shown below:
+
+(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134227/1/rotate.png)
+
+Once done, you can save and export the PDF file to see the content in your PDF file as shown below:
+
+(https://i1.code.msdn.s-msft.com/pdf-editor-to-edit-pdf-5fb73b8d/image/file/134228/1/saved.png)
 
 ### Dragging / Positioning / Deleting Inserted Content
 

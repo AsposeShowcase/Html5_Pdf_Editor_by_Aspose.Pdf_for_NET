@@ -1,4 +1,5 @@
 D:\Nausherwan Aslam\Samples\Aspose_PDF_Editor\AsposePdfEditor\bin\AsposePdfEditor.dll
 D:\Nausherwan Aslam\Samples\Aspose_PDF_Editor\AsposePdfEditor\bin\AsposePdfEditor.pdb
+D:\Nausherwan Aslam\Samples\Aspose_PDF_Editor\AsposePdfEditor\obj\Debug\AsposePdfEditor.csprojResolveAssemblyReference.cache
 D:\Nausherwan Aslam\Samples\Aspose_PDF_Editor\AsposePdfEditor\obj\Debug\AsposePdfEditor.dll
 D:\Nausherwan Aslam\Samples\Aspose_PDF_Editor\AsposePdfEditor\obj\Debug\AsposePdfEditor.pdb
