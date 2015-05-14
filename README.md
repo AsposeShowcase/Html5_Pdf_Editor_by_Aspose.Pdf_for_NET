@@ -1,3 +1,6 @@
+## IMPORTANT NOTICE
+This project is now part of [Aspose.Pdf for .NET repository](https://github.com/asposepdf/Aspose_Pdf_NET), which has everything related to the source code, including Examples, Showcase projects and Plugins. All future updates will be maintained there.
+
 ## HTML5 PDF Editor by Aspose.Pdf for .NET v2.3.1
 
 ### Introduction
